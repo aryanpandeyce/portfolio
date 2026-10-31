@@ -1,0 +1,49 @@
+{
+  "pinnedSlugs": [
+    "synth-cache",
+    "retro-term-react",
+    "stream-craft",
+    "cloud-sentinel",
+    "pulse-kv",
+    "pixel-craft-canvas"
+  ],
+  "hiddenSlugs": [],
+  "overrides": {
+    "synth-cache": {
+      "featuredTag": "Distributed Systems",
+      "customDescription": "High-throughput distributed in-memory cache written in Go with Raft consensus, consistent hashing, and sub-millisecond p99 latency.",
+      "liveDemo": "https://synth-cache.dev",
+      "architecture": "Raft Consensus / Go / Zero-Allocation Serialization"
+    },
+    "retro-term-react": {
+      "featuredTag": "Frontend Tooling",
+      "customDescription": "A tactile retro terminal emulator component for React & Next.js featuring ANSI color parsing, scanlines, and VT100 escape codes.",
+      "liveDemo": "https://retro-term.dev",
+      "architecture": "React 19 / TypeScript / Web Audio API"
+    },
+    "stream-craft": {
+      "featuredTag": "Event Streaming",
+      "customDescription": "Real-time reactive analytics streaming pipeline with WebSockets, Kafka connector, and live canvas dashboard visualization.",
+      "liveDemo": "https://stream-craft.dev",
+      "architecture": "Kafka / WebSockets / Node.js Streams / Canvas"
+    },
+    "cloud-sentinel": {
+      "featuredTag": "Cloud Security",
+      "customDescription": "Automated security compliance & cost-optimization scanner for AWS infrastructure built with Python and Terraform.",
+      "liveDemo": "https://sentinel-audit.dev",
+      "architecture": "AWS Boto3 / Python / Terraform / Slack Webhooks"
+    },
+    "pulse-kv": {
+      "featuredTag": "Storage Engine",
+      "customDescription": "Persistent Log-Structured Merge (LSM) key-value storage engine engineered in Go with SSTable compaction and Bloom filters.",
+      "liveDemo": "https://pulse-kv.dev",
+      "architecture": "Go / LSM-Tree / SSTables / Bloom Filters"
+    },
+    "pixel-craft-canvas": {
+      "featuredTag": "Creative Tech",
+      "customDescription": "Collaborative real-time multiplayer pixel canvas with WebSockets, undo/redo state trees, and sprite sheet export.",
+      "liveDemo": "https://pixel-craft.dev",
+      "architecture": "TypeScript / HTML5 Canvas / WebSockets"
+    }
+  }
+}

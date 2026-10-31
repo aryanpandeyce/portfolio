@@ -1,26 +1,249 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #FAF8F5;
+    --surface: #FFFFFF;
+    --surface-muted: #F2EEE6;
+    --foreground: #1A1917;
+    --foreground-muted: #68635B;
+    --border: #E4DDD3;
+    --border-retro: #1A1917;
+    --accent: #D97757;
+    --accent-hover: #C26546;
+    --accent-subtle: rgba(217, 119, 87, 0.12);
+    --accent-secondary: #4D7C79;
+    --accent-amber: #D4973B;
+    --accent-rose: #C85252;
+    --retro-shadow-color: #1A1917;
+  }
+
+  .dark {
+    --background: #1E1D1B;
+    --surface: #272623;
+    --surface-muted: #32302C;
+    --foreground: #EDEAE3;
+    --foreground-muted: #9E998F;
+    --border: #383631;
+    --border-retro: #EDEAE3;
+    --accent: #E28468;
+    --accent-hover: #EDA087;
+    --accent-subtle: rgba(226, 132, 104, 0.2);
+    --accent-secondary: #6CA8A5;
+    --accent-amber: #E5AC54;
+    --accent-rose: #DC6C6C;
+    --retro-shadow-color: #0A0A0A;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    overflow-x: clip;
+    max-width: 100vw;
   }
 }
 
-body {
+/* Retro and Aesthetic Utilities */
+.font-serif-heading {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-pixel {
+  font-family: var(--font-pixel), var(--font-mono), monospace;
+}
+
+.font-mono-code {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Hard Offset Shadows */
+.retro-shadow-sm {
+  box-shadow: 2px 2px 0px var(--retro-shadow-color);
+}
+
+.retro-shadow {
+  box-shadow: 4px 4px 0px var(--retro-shadow-color);
+}
+
+.retro-shadow-lg {
+  box-shadow: 6px 6px 0px var(--retro-shadow-color);
+}
+
+.retro-shadow-accent {
+  box-shadow: 4px 4px 0px var(--accent);
+}
+
+.retro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: 2px solid var(--border-retro);
+  box-shadow: 3px 3px 0px var(--retro-shadow-color);
+  transition: all 0.15s ease-in-out;
+  border-radius: 8px;
+}
+
+.retro-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--retro-shadow-color);
+}
+
+.retro-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--retro-shadow-color);
+}
+
+.retro-card {
+  background-color: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0px var(--retro-shadow-color);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.retro-card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px var(--retro-shadow-color);
+}
+
+.retro-card-accent {
+  border-color: var(--accent);
+}
+
+/* Terminal Window Header */
+.window-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--surface-muted);
+  border-bottom: 2px solid var(--border);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot-red {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FF5F56;
+  border: 1px solid #E0443E;
+}
+
+.dot-yellow {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FFBD2E;
+  border: 1px solid #DEA123;
+}
+
+.dot-green {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #27C93F;
+  border: 1px solid #1AAB29;
+}
+
+/* Dotted grid canvas */
+.dotted-bg {
+  background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* CRT Scanline Overlay */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+}
+
+/* CRT Curved Screen Vignette */
+.crt-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background: radial-gradient(circle at center, transparent 65%, rgba(0, 0, 0, 0.3) 100%);
+  opacity: 0.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Smooth Focus states */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Infinite Tech Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

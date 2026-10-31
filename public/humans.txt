@@ -1,0 +1,16 @@
+/* TEAM */
+Engineer & Designer: Alex Rivera
+Contact: alex.rivera.dev@example.com
+GitHub: https://github.com/alexrivera-dev
+Location: San Francisco, CA
+
+/* SITE */
+Standards: HTML5, CSS3, ESNext, TypeScript
+Framework: Next.js (App Router, Static HTML Export)
+Styling: Tailwind CSS v4, Custom Retro Design System
+3D: Three.js, React Three Fiber, React Three Drei
+Icons: Lucide React
+Testing: Playwright Test Suite
+Hosting: GitHub Pages (.nojekyll)
+Design Inspiration: Claude Warm Editorial Palette + Tactile Retro Computing
+Last Updated: 2026-11-01

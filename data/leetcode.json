@@ -1,0 +1,30 @@
+{
+  "username": "alexrivera_dev",
+  "totalSolved": 482,
+  "totalQuestions": 3200,
+  "easySolved": 168,
+  "totalEasy": 820,
+  "mediumSolved": 254,
+  "totalMedium": 1720,
+  "hardSolved": 60,
+  "totalHard": 660,
+  "acceptanceRate": 68.4,
+  "ranking": 42150,
+  "contributionPoints": 1280,
+  "reputation": 412,
+  "streak": 48,
+  "badges": [
+    { "name": "50 Days Badge 2026", "icon": "trophy" },
+    { "name": "Annual Streak 2025", "icon": "flame" },
+    { "name": "Graph Theory Specialist", "icon": "network" },
+    { "name": "Dynamic Programming Master", "icon": "cpu" }
+  ],
+  "topicBreakdown": [
+    { "topic": "Dynamic Programming", "solved": 84 },
+    { "topic": "Arrays & Strings", "solved": 142 },
+    { "topic": "Trees & Binary Search", "solved": 96 },
+    { "topic": "Graphs & BFS/DFS", "solved": 68 },
+    { "topic": "Sliding Window & Pointers", "solved": 54 },
+    { "topic": "Heaps & Tries", "solved": 38 }
+  ]
+}
