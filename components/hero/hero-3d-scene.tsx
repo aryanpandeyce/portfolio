@@ -139,34 +139,60 @@ function Loader() {
 }
 
 export function Hero3DScene() {
-  const [mounted, setMounted] = useState(false);
-  const [hasWebGL, setHasWebGL] = useState(true);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [canRender3D, setCanRender3D] = useState(false);
+  const [isIdleReady, setIsIdleReady] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    // 1. Reduced motion check
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
 
-    // Check prefers-reduced-motion
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mediaQuery.matches);
+    // 2. Viewport check (< 768px skip 3D)
+    if (window.innerWidth < 768) return;
 
-    // Check WebGL availability
+    // 3. Save-data check
+    const nav = navigator as Navigator & {
+      connection?: { saveData?: boolean };
+      deviceMemory?: number;
+    };
+    if (nav.connection?.saveData) return;
+
+    // 4. Low-spec device check (memory <= 4GB or concurrency <= 4)
+    if (typeof nav.deviceMemory === "number" && nav.deviceMemory <= 4) return;
+    if (typeof nav.hardwareConcurrency === "number" && nav.hardwareConcurrency <= 4) return;
+
+    // 5. WebGL availability check
     try {
       const canvas = document.createElement("canvas");
       const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-      if (!gl) {
-        setHasWebGL(false);
-      }
+      if (!gl) return;
     } catch {
-      setHasWebGL(false);
+      return;
+    }
+
+    const onReady = () => {
+      setCanRender3D(true);
+      setIsIdleReady(true);
+    };
+
+    // Defer mounting until after idle/initial paint
+    if ("requestIdleCallback" in window) {
+      const idleId = (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(
+        onReady,
+        { timeout: 1000 }
+      );
+      return () => {
+        if ("cancelIdleCallback" in window) {
+          (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(idleId);
+        }
+      };
+    } else {
+      const timer = setTimeout(onReady, 400);
+      return () => clearTimeout(timer);
     }
   }, []);
 
-  if (!mounted) {
-    return <Hero3DFallback />;
-  }
-
-  if (reducedMotion || !hasWebGL) {
+  if (!canRender3D || !isIdleReady) {
     return <Hero3DFallback />;
   }
 
@@ -176,7 +202,7 @@ export function Hero3DScene() {
         <Canvas
           dpr={[1, 1.5]}
           camera={{ position: [0, 1.2, 4.6], fov: 42 }}
-          gl={{ antialias: true, alpha: true }}
+          gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
           style={{ width: "100%", height: "100%" }}
         >
           {/* Lighting */}

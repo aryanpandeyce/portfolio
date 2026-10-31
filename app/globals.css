@@ -247,3 +247,37 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Below-the-fold content visibility optimization */
+#experience,
+#projects,
+#skills,
+#achievements,
+#metrics,
+#education,
+#arcade,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .crt-overlay,
+  .crt-vignette {
+    display: none !important;
+  }
+}

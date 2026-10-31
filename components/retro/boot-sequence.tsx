@@ -3,40 +3,63 @@
 import React, { useEffect, useState } from "react";
 import { retroAudio } from "@/lib/audio";
 
+const BOOT_LINES = [
+  "BIOS v4.88 (c) KERNEL INIT 2026",
+  "CHECKING RAM: 640K CONVENTIONAL ... OK",
+  "GPU GRAPHICS PIPELINE: R3F / WEBGL2 ... LOADED",
+  "MOUNTING CACHE: GITHUB & LEETCODE ... READY",
+  "STARTING RETRO WORKSTATION OS ... OK",
+];
+
 export function BootSequence() {
   const [show, setShow] = useState(false);
   const [logs, setLogs] = useState<string[]>([]);
   const [progress, setProgress] = useState(0);
 
-  const bootLines = [
-    "BIOS v4.88 (c) KERNEL INIT 2026",
-    "CHECKING RAM: 640K CONVENTIONAL ... OK",
-    "GPU GRAPHICS PIPELINE: R3F / WEBGL2 ... LOADED",
-    "MOUNTING CACHE: GITHUB & LEETCODE ... READY",
-    "STARTING RETRO WORKSTATION OS ... OK",
-  ];
+  const dismissBoot = React.useCallback(() => {
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("portfolio-booted", "true");
+    }
+    setShow(false);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
+    // Check prefers-reduced-motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    // Check bots/crawlers
+    if (/bot|googlebot|crawler|spider|robot|crawling|headless/i.test(navigator.userAgent)) {
+      return;
+    }
+
     const hasBooted = sessionStorage.getItem("portfolio-booted");
     if (hasBooted) return;
 
-    setShow(true);
-    retroAudio.playPowerUp();
-
     let step = 0;
-    const interval = setInterval(() => {
-      if (step < bootLines.length) {
-        setLogs((prev) => [...prev, bootLines[step]]);
-        setProgress(Math.round(((step + 1) / bootLines.length) * 100));
-        step++;
-      } else {
-        clearInterval(interval);
-        setTimeout(() => {
-          dismissBoot();
-        }, 400);
-      }
-    }, 300);
+    let interval: ReturnType<typeof setInterval>;
+
+    const timer = setTimeout(() => {
+      setShow(true);
+      retroAudio.playPowerUp();
+
+      interval = setInterval(() => {
+        if (step < BOOT_LINES.length) {
+          const currentLine = BOOT_LINES[step];
+          setLogs((prev) => [...prev, currentLine]);
+          setProgress(Math.round(((step + 1) / BOOT_LINES.length) * 100));
+          step++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            dismissBoot();
+          }, 400);
+        }
+      }, 300);
+    }, 50);
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
@@ -47,17 +70,11 @@ export function BootSequence() {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      clearInterval(interval);
+      clearTimeout(timer);
+      if (interval) clearInterval(interval);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
-
-  const dismissBoot = () => {
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("portfolio-booted", "true");
-    }
-    setShow(false);
-  };
+  }, [dismissBoot]);
 
   if (!show) return null;
 

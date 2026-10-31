@@ -1,0 +1,18 @@
+[
+  {
+    "resourceType": "script",
+    "budget": 250
+  },
+  {
+    "resourceType": "stylesheet",
+    "budget": 100
+  },
+  {
+    "resourceType": "document",
+    "budget": 50
+  },
+  {
+    "resourceType": "total",
+    "budget": 1000
+  }
+]
