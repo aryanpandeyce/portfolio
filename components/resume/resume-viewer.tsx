@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { profileData } from "@/data/profile";
 import { retroAudio } from "@/lib/audio";
+import { withBasePath } from "@/lib/utils";
 import {
   Download,
   Printer,
@@ -122,7 +123,7 @@ ${profileData.skillTree
             {/* Download button shown only if compiled PDF exists */}
             {hasPdf ? (
               <a
-                href="/resume.pdf"
+                href={withBasePath("/resume.pdf")}
                 download="Aryan_Pandey_Resume.pdf"
                 onClick={() => retroAudio.playClick()}
                 className="retro-btn px-4 py-1.5 bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] font-mono-code text-xs gap-1.5"

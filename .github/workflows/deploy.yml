@@ -44,6 +44,7 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: next
@@ -61,7 +62,8 @@ jobs:
 
       - name: Build Next.js Static Export
         env:
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path || '/portfolio' }}
+          NEXT_PUBLIC_SITE_URL: "https://aryanpandeyce.github.io/portfolio"
         run: npm run build
 
       - name: Ensure .nojekyll Exists

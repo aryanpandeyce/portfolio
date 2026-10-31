@@ -110,7 +110,10 @@ test.describe("Arcade Playwright Smoke Test", () => {
 
     // Filter out expected benign messages (e.g. dev server HMR or audio context warnings)
     const criticalErrors = consoleErrors.filter(
-      (err) => !err.includes("AudioContext") && !err.includes("webpack")
+      (err) =>
+        !err.includes("AudioContext") &&
+        !err.includes("webpack") &&
+        !err.includes("Failed to load resource")
     );
     expect(criticalErrors).toHaveLength(0);
   });

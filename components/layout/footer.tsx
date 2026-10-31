@@ -6,6 +6,7 @@ import { profileData } from "@/data/profile";
 import { retroAudio } from "@/lib/audio";
 import { ArrowUp, Mail, Terminal, Heart } from "lucide-react";
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/icons";
+import { withBasePath } from "@/lib/utils";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -159,7 +160,7 @@ export function Footer() {
               <li>React Three Fiber (3D)</li>
               <li>
                 <a
-                  href="/sitemap.xml"
+                  href={withBasePath("/sitemap.xml")}
                   target="_blank"
                   className="hover:text-[var(--accent)] transition-colors"
                 >
@@ -168,7 +169,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/robots.txt"
+                  href={withBasePath("/robots.txt")}
                   target="_blank"
                   className="hover:text-[var(--accent)] transition-colors"
                 >

@@ -4,7 +4,7 @@ import { getAllProjectSlugs } from "@/lib/github";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aryanpandeyce.github.io";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aryanpandeyce.github.io/portfolio";
   const projectSlugs = getAllProjectSlugs();
 
   const routes: MetadataRoute.Sitemap = [

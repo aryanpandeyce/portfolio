@@ -112,7 +112,7 @@ function RetroComputer() {
         {/* Shutter */}
         <mesh position={[0, 0.15, 0.035]}>
           <planeGeometry args={[0.4, 0.35]} />
-          <meshStandardMaterial color="#Silver" roughness={0.2} metalness={0.8} />
+          <meshStandardMaterial color="#C0C0C0" roughness={0.2} metalness={0.8} />
         </mesh>
       </Float>
 

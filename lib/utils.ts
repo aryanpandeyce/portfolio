@@ -16,3 +16,14 @@ export function formatDate(dateString: string): string {
     return dateString;
   }
 }
+
+export function getBasePath(): string {
+  return process.env.NEXT_PUBLIC_BASE_PATH || "";
+}
+
+export function withBasePath(path: string): string {
+  const base = getBasePath();
+  if (!base) return path;
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return `${base}${cleanPath}`;
+}
