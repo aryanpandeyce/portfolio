@@ -36,42 +36,47 @@ const pressStart = Press_Start_2P({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alexrivera-dev.github.io";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aryanpandeyce.github.io";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Alex Rivera | Full-Stack Engineer & Cloud Architect",
-    template: "%s | Alex Rivera",
+    default: "Aryan Pandey | Backend & Cloud-Native Engineer (Go, Java, Kubernetes)",
+    template: "%s | Aryan Pandey",
   },
   description:
-    "Alex Rivera is a Senior Full-Stack Engineer and Cloud Architect specializing in distributed systems, high-throughput microservices, Next.js, Go, TypeScript, and cloud infrastructure.",
+    "Aryan Pandey is a Backend & Cloud-Native Engineer specializing in Go, Java 21, Kubernetes, Kafka, and distributed microservices with full-stack roots in React and Node.",
   keywords: [
-    "Alex Rivera",
-    "Full-Stack Engineer",
-    "Cloud Architect",
+    "Aryan Pandey",
+    "Backend Engineer",
+    "Cloud-Native Engineer",
+    "Go",
+    "Java 21",
+    "Kubernetes",
+    "Kafka",
     "Distributed Systems",
-    "Next.js Developer",
-    "TypeScript",
-    "Go Engineer",
+    "Spring Boot",
+    "Microservices",
+    "PostgreSQL",
+    "Docker",
     "Software Engineer Portfolio",
   ],
-  authors: [{ name: "Alex Rivera", url: siteUrl }],
-  creator: "Alex Rivera",
+  authors: [{ name: "Aryan Pandey", url: siteUrl }],
+  creator: "Aryan Pandey",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: "Alex Rivera | Full-Stack Engineer & Cloud Architect",
+    title: "Aryan Pandey | Backend & Cloud-Native Engineer (Go, Java, Kubernetes)",
     description:
-      "Crafting resilient distributed backends & delightfully tactile web experiences with Next.js, Go, and TypeScript.",
-    siteName: "Alex Rivera Developer Portfolio",
+      "Crafting scalable backends & observable microservices with Go, Java, and Kubernetes.",
+    siteName: "Aryan Pandey Developer Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Rivera | Full-Stack Engineer & Cloud Architect",
+    title: "Aryan Pandey | Backend & Cloud-Native Engineer (Go, Java, Kubernetes)",
     description:
-      "Crafting resilient distributed backends & delightfully tactile web experiences with Next.js, Go, and TypeScript.",
+      "Crafting scalable backends & observable microservices with Go, Java, and Kubernetes.",
   },
   robots: {
     index: true,
@@ -101,28 +106,31 @@ export default function RootLayout({
         ],
         alumniOf: {
           "@type": "EducationalOrganization",
-          name: profileData.education[0]?.institution || "Northeastern University",
+          name: "Gujarat Technological University",
         },
         knowsAbout: [
+          "Go",
+          "Java",
+          "Microservices",
+          "Kubernetes",
+          "Kafka",
           "Distributed Systems",
-          "Cloud Architecture",
-          "Full-Stack Development",
-          "Next.js",
-          "TypeScript",
-          "Golang",
+          "Spring Boot",
           "PostgreSQL",
-          "Apache Kafka",
+          "Docker",
+          "Redis",
+          "AWS Cloud",
         ],
       },
       {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
-        name: `${profileData.personal.name} Portfolio`,
+        name: `${profileData.personal.name} Developer Portfolio`,
         author: {
           "@id": `${siteUrl}/#person`,
         },
-        description: profileData.personal.tagline,
+        description: profileData.personal.headline,
       },
     ],
   };

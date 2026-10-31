@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { profileData } from "@/data/profile";
 import { retroAudio } from "@/lib/audio";
-import { ArrowUp, Mail, Code, Terminal, Heart } from "lucide-react";
+import { ArrowUp, Mail, Terminal, Heart } from "lucide-react";
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/icons";
 
 export function Footer() {
@@ -21,7 +21,7 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-between gap-4 font-mono-code text-xs">
             <div className="flex items-center gap-2">
               <Terminal className="w-4 h-4 text-[var(--accent)]" />
-              <span className="text-[var(--accent)] font-semibold">guest@rivera-station:~$</span>
+              <span className="text-[var(--accent)] font-semibold">guest@pandey-station:~$</span>
               <span className="text-[var(--foreground)]">uname -a</span>
             </div>
             <div className="flex items-center gap-3 text-[11px] text-[var(--foreground-muted)]">
@@ -46,7 +46,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-[var(--foreground-muted)] max-w-md leading-relaxed">
-              {profileData.personal.tagline}
+              {profileData.personal.headline}
             </p>
             <div className="pt-2 flex items-center gap-3">
               <a
@@ -118,6 +118,14 @@ export function Footer() {
                   className="text-[var(--foreground-muted)] hover:text-[var(--accent)] transition-colors"
                 >
                   &gt; Projects Archive
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/arcade"
+                  className="text-[var(--foreground-muted)] hover:text-[var(--accent)] transition-colors"
+                >
+                  &gt; Retro Arcade
                 </Link>
               </li>
               <li>

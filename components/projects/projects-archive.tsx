@@ -9,8 +9,6 @@ import {
   Search,
   ExternalLink,
   Star,
-  GitFork,
-  ArrowRight,
   Filter,
   SlidersHorizontal,
   Calendar,

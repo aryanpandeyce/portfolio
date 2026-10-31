@@ -5,9 +5,18 @@ import { Terminal, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Projects & Repositories | Alex Rivera",
+  title: "Projects & Repositories | Aryan Pandey",
   description:
-    "Explore open source repositories, distributed systems, developer tooling, and web applications built by Alex Rivera.",
+    "Explore open source repositories, cloud-native microservices, payment platforms, and developer tooling built by Aryan Pandey.",
+  alternates: {
+    canonical: "/projects/",
+  },
+  openGraph: {
+    title: "Projects & Repositories | Aryan Pandey",
+    description:
+      "Cloud-native microservices, event-driven payment systems, and open source architectures.",
+    url: "/projects/",
+  },
 };
 
 export default function ProjectsPage() {
@@ -29,7 +38,7 @@ export default function ProjectsPage() {
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 font-mono-code text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">
               <Terminal className="w-3.5 h-3.5" />
-              <span>// DIRECTORY / REPOSITORIES</span>
+              <span>{"// DIRECTORY / REPOSITORIES"}</span>
             </div>
             <h1 className="font-serif-heading font-extrabold text-3xl sm:text-5xl text-[var(--foreground)] tracking-tight">
               All Public Repositories &amp; Engineering Artifacts.

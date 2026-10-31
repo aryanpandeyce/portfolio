@@ -1,8 +1,9 @@
 /* TEAM */
-Engineer & Designer: Alex Rivera
-Contact: alex.rivera.dev@example.com
-GitHub: https://github.com/alexrivera-dev
-Location: San Francisco, CA
+Engineer: Aryan Pandey
+Role: Backend & Cloud-Native Engineer | Go, Java, Distributed Systems
+Contact: aryanpandey.ce@gmail.com
+GitHub: https://github.com/aryanpandeyce
+Location: Ahmedabad, India
 
 /* SITE */
 Standards: HTML5, CSS3, ESNext, TypeScript
@@ -10,6 +11,7 @@ Framework: Next.js (App Router, Static HTML Export)
 Styling: Tailwind CSS v4, Custom Retro Design System
 3D: Three.js, React Three Fiber, React Three Drei
 Icons: Lucide React
+Arcade: Pure HTML5 Canvas 2D, requestAnimationFrame
 Testing: Playwright Test Suite
 Hosting: GitHub Pages (.nojekyll)
 Design Inspiration: Claude Warm Editorial Palette + Tactile Retro Computing

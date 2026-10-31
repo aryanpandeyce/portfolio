@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { retroAudio } from "@/lib/audio";
-import { Terminal, Home, RotateCcw } from "lucide-react";
+import { Home, RotateCcw } from "lucide-react";
 
 export default function NotFound() {
   useEffect(() => {

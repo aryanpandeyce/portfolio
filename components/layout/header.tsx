@@ -20,14 +20,12 @@ import {
 
 export function Header() {
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const { crtEnabled, toggleCRT, audioEnabled, toggleAudio } = useCRT();
-  const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -40,6 +38,7 @@ export function Header() {
     { label: "Experience", href: "/#experience" },
     { label: "Projects", href: "/projects" },
     { label: "Skills", href: "/#skills" },
+    { label: "Arcade", href: "/arcade" },
     { label: "Metrics", href: "/#metrics" },
     { label: "Resume", href: "/resume" },
     { label: "Contact", href: "/#contact" },
@@ -52,7 +51,8 @@ export function Header() {
 
   const handleThemeToggle = () => {
     retroAudio.playClick();
-    setTheme(theme === "dark" ? "light" : "dark");
+    const current = resolvedTheme || theme;
+    setTheme(current === "dark" ? "light" : "dark");
   };
 
   const handleCRTToggle = () => {
@@ -81,11 +81,11 @@ export function Header() {
           className="group flex items-center gap-3 focus:outline-none"
         >
           <div className="w-9 h-9 rounded-lg bg-[var(--surface-muted)] border-2 border-[var(--border)] group-hover:border-[var(--accent)] flex items-center justify-center font-mono font-bold text-sm text-[var(--accent)] transition-all shadow-[2px_2px_0px_var(--retro-shadow-color)]">
-            AR
+            AP
           </div>
           <div className="flex flex-col">
             <span className="font-serif-heading font-bold text-base sm:text-lg tracking-tight leading-none text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
-              Alex Rivera
+              Aryan Pandey
             </span>
             <div className="flex items-center gap-1.5 mt-0.5">
               <span className="inline-block w-2 h-2 rounded-full bg-[#27C93F] animate-pulse" />
@@ -97,7 +97,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
           {navLinks.map((item) => {
             const isActive =
               item.href === pathname ||
@@ -150,20 +150,19 @@ export function Header() {
           </button>
 
           {/* Light/Dark Theme Switcher */}
-          {mounted && (
-            <button
-              onClick={handleThemeToggle}
-              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="p-2 rounded-md border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--accent)] transition-all shadow-[2px_2px_0px_var(--retro-shadow-color)]"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-4 h-4 text-[#FFBD2E]" />
-              ) : (
-                <Moon className="w-4 h-4 text-[var(--accent)]" />
-              )}
-            </button>
-          )}
+          <button
+            onClick={handleThemeToggle}
+            title={`Switch to ${(resolvedTheme || theme) === "dark" ? "light" : "dark"} mode`}
+            aria-label={`Switch to ${(resolvedTheme || theme) === "dark" ? "light" : "dark"} mode`}
+            className="p-2 rounded-md border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--accent)] transition-all shadow-[2px_2px_0px_var(--retro-shadow-color)]"
+            suppressHydrationWarning
+          >
+            {(resolvedTheme || theme) === "dark" ? (
+              <Sun className="w-4 h-4 text-[#FFBD2E]" />
+            ) : (
+              <Moon className="w-4 h-4 text-[var(--accent)]" />
+            )}
+          </button>
 
           {/* Resume Quick Action (Desktop) */}
           <Link
@@ -182,7 +181,7 @@ export function Header() {
               setMobileMenuOpen(!mobileMenuOpen);
             }}
             aria-label="Toggle mobile menu"
-            className="md:hidden p-2 rounded-md border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)]"
+            className="lg:hidden p-2 rounded-md border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)]"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -191,7 +190,7 @@ export function Header() {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b-2 border-[var(--border)] bg-[var(--surface)] px-4 pt-3 pb-6 space-y-2 shadow-lg animate-in slide-in-from-top duration-200">
+        <div className="lg:hidden border-b-2 border-[var(--border)] bg-[var(--surface)] px-4 pt-3 pb-6 space-y-2 shadow-lg animate-in slide-in-from-top duration-200">
           <div className="pb-2 border-b border-[var(--border)] flex items-center justify-between text-xs font-mono-code text-[var(--foreground-muted)]">
             <span className="flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-[var(--accent)]" />

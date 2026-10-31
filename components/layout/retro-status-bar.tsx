@@ -19,9 +19,11 @@ export function RetroStatusBar() {
     { label: "Work Experience Timeline", href: "/#experience", category: "Section" },
     { label: "Featured Projects (Bento)", href: "/#projects", category: "Section" },
     { label: "All Repositories Archive", href: "/projects", category: "Page" },
-    { label: "Skills Matrix & Tooling", href: "/#skills", category: "Section" },
+    { label: "Skill Tree // Loadout", href: "/#skills", category: "Section" },
+    { label: "Trophy Case // Merits", href: "/#achievements", category: "Section" },
     { label: "Coding Profiles (GitHub & LeetCode)", href: "/#metrics", category: "Section" },
     { label: "Education & Certifications", href: "/#education", category: "Section" },
+    { label: "Retro Arcade // Insert Coin", href: "/arcade", category: "Page" },
     { label: "Interactive Resume", href: "/resume", category: "Page" },
     { label: "Contact Form", href: "/#contact", category: "Section" },
   ];
