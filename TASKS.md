@@ -1,104 +1,57 @@
 # Implementation Tasks Checklist (TASKS.md)
 
-- [x] **Phase 1: Project Initialization & Dependency Scaffolding**
-  - [x] Initialize Next.js app with TypeScript, Tailwind CSS, App Router, ESLint (`next.config.ts` configured for `output: 'export'`, `images.unoptimized: true`, `trailingSlash: true`, configurable `basePath`).
-  - [x] Install dependencies: `lucide-react`, `next-themes`, `framer-motion`, `clsx`, `tailwind-merge`, `canvas-confetti`, `@types/canvas-confetti`, `react-markdown`, `remark-gfm`, `rehype-highlight`, `three`, `@react-three/fiber`, `@react-three/drei`, `@types/three`.
-  - [x] Install dev dependencies: `@playwright/test`, `prettier`, etc.
-  - [x] Configure `next.config.ts` with `output: 'export'`, `trailingSlash: true`, and `basePath` / `assetPrefix` support.
-  - [x] Set up Playwright configuration (`playwright.config.ts`) with multi-viewport projects (375px, 768px, 1280px, 1920px).
+## Personalization & Modernization Milestones
 
-- [x] **Phase 2: Design System, Tokens & Retro Foundations**
-  - [x] Configure Google Fonts (`Fraunces` for serif headings, `Inter` for body sans, `JetBrains Mono` for tech mono, `Press Start 2P` for pixel accents).
-  - [x] Define Claude-inspired warm palette and retro tokens in `globals.css` and `tailwind.config.ts` (light warm cream `#FAF8F5`, dark warm charcoal `#1E1D1B`, terracotta accent `#D97757`, retro borders, hard offset shadows).
-  - [x] Build retro utility classes: `.retro-card`, `.retro-shadow`, `.retro-btn`, `.retro-badge`, `.scanline-overlay`, `.dotted-bg`, `.animate-marquee`.
-  - [x] Implement `ThemeProvider` (`next-themes`) with light, dark, and system modes without FOUC.
-  - [x] Implement toggleable CRT scanlines & noise overlay component with persistence in local storage.
-  - [x] Implement desktop-only retro crosshair/ring custom cursor with auto-disable on touch screens and outside viewport.
-  - [x] Implement retro "Boot Sequence" terminal screen (short, skippable, 1-per-session with `sessionStorage`).
+- [x] **Phase 1: Identity & Profile Personalization**
+  - [x] Update `data/profile.ts` with Aryan Pandey's real data (Headline: "Backend & Cloud-Native Engineer | Go, Java, Distributed Systems", secondary line: "Full-stack roots in React and Node. Building scalable, observable microservices.").
+  - [x] Strict phone visibility constraint: `+91-9054454394` displayed strictly ONLY on `/resume` web page (never in meta tags, JSON-LD, sitemap, or humans.txt).
+  - [x] Update 3 real experiences: Shyam Group (IntelliWorkz) CRM, Technomine, Techno Hacks Edutech.
+  - [x] Update 3 featured projects in `data/projects.override.json`: FleetPulse (Go/Kubernetes), ApexPay (Java 21/Spring Boot/Kafka), LendStrangler (TypeScript/RabbitMQ) with factual Problem -> Approach -> Result summaries and live demo links for ApexPay and LendStrangler.
+  - [x] Remove placeholder project "synth-cache" from data, tests, and documentation.
+  - [x] Update education: Gujarat Technological University (BE CS, CGPA 9.03/10.0), IIT Madras (BSc Data Science, GPA 6.80/10.0).
+  - [x] Update 4 achievements: Dewang Mehta IT Award 2023, HackerRank 5-Star JavaScript, 365-Day LeetCode Streak, GDSC Lead.
+  - [x] Update GitHub user snapshot for `aryanpandeyce` and LeetCode snapshot with verified 365-day streak and clear TODO notices without fake stats.
 
-- [x] **Phase 3: Core Layout & Navigation Shell**
-  - [x] Build `Header` component:
-    - [x] Retro terminal-style top bar with live status indicator ("Available for work")
-    - [x] Desktop navigation links with active state indicator
-    - [x] Quick Action cluster: Theme toggle, CRT toggle, Sound toggle, Resume link
-    - [x] Mobile navigation sheet/drawer with animated hamburger trigger
-  - [x] Build `RetroStatusBar` (dock / bottom pill) with quick jump command modal, CRT state, audio toggle, and viewport indicator.
-  - [x] Build `Footer` component with retro system uptime, social links, copyright, and back-to-top button.
-  - [x] Implement `SkipToContent` accessibility link.
+- [x] **Phase 2: Hero, About & Experience Polish**
+  - [x] Personalize Hero section with animated typewriter rotating specialties, Aryan's headline, and `● OPEN TO OPPORTUNITIES` retro badge.
+  - [x] 3D Hero performance gating: automatically falls back to static SVG terminal illustration when WebGL is unavailable, `prefers-reduced-motion` is active, `saveData` is enabled, device memory <= 4GB, concurrency <= 4 cores, or viewport < 768px.
+  - [x] Hero heading (real HTML text) serves as the instant Largest Contentful Paint (LCP) element.
+  - [x] Rewrite About section narrative (~120 words honest first-person bio with natural SEO keywords).
+  - [x] Filter infinite marquee in About to only technologies on Aryan's resume; pause on hover, off-screen, and under `prefers-reduced-motion`.
+  - [x] Experience timeline: tech chips per role with interactive mobile collapsible toggle.
+  - [x] Dedicated "Trophy Case" card row component (`components/sections/achievements-section.tsx`).
 
-- [x] **Phase 4: Data Layer, Static Storage & Fallbacks**
-  - [x] Create `data/profile.ts` with comprehensive typed personal information, experiences, education, certifications, and skills with placeholder fallback values.
-  - [x] Create `data/github.json` committed snapshot with realistic high-quality sample repositories and stats.
-  - [x] Create `data/leetcode.json` committed snapshot with realistic solved problem distribution and ranking.
-  - [x] Create `data/projects.override.json` for custom pin order, custom demo URLs, screenshots, and descriptions.
-  - [x] Implement `lib/github.ts` build-time fetcher with error boundary & fallback to `data/github.json`.
-  - [x] Implement `lib/leetcode.ts` build-time fetcher with error boundary & fallback to `data/leetcode.json`.
-  - [x] Create build sync script `scripts/fetch-data.mjs` for automated GitHub Actions workflows.
+- [x] **Phase 3: Evidence-Based Skill Tree // Loadout**
+  - [x] Delete old Technology Matrix with percentage bars.
+  - [x] Build retro cartridge-slot UI grouped in window panels: Languages, Backend & Microservices, Cloud & DevOps, Databases, Frontend, AI/Data, Core CS.
+  - [x] Evidence tiers: `Daily Driver`, `Production`, `Built Projects`.
+  - [x] Crawlable HTML proof links for each technology cartridge.
+  - [x] Keyboard-accessible category filter tabs and 2-column mobile layout.
 
-- [x] **Phase 5: Home Page Section Implementation**
-  - [x] **Hero Section**:
-    - [x] Retro terminal badge `> SYSTEM.STATUS: READY`
-    - [x] Editorial serif headline with highlighted terracotta typography
-    - [x] Dynamic typewriter tagline rotating developer specialties
-    - [x] Retro button cluster (Browse Projects, Download Resume, Contact Me, Press Start celebration)
-    - [x] 3D Hero interactive canvas (R3F) with low-poly interactive retro computer/avatar, cursor head-tracking, subtle idle float, ambient lighting, and static fallback for reduced-motion/mobile.
-  - [x] **About Section**:
-    - [x] Narrative bio in editorial layout with personal highlight cards
-    - [x] Quick metrics strip (years of experience, repositories, solved problems, contributions)
-    - [x] Infinite scrolling tech stack icons marquee with smooth CSS loop
-  - [x] **Experience Timeline**:
-    - [x] Vertical timeline spine with retro milestone nodes
-    - [x] Experience cards featuring company, role, dates, location, achievements, and tech pills
-  - [x] **Featured Projects Section**:
-    - [x] Bento grid layout featuring top 6 curated projects
-    - [x] Interactive cards with retro title bar, tags, star counts, GitHub button, live demo link, and case study link
-  - [x] **Skills Matrix**:
-    - [x] Categorized tabs: Languages, Frontend, Backend & Database, Cloud & DevOps, Tools
-    - [x] Interactive skill cards with proficiency indicators and icons
-  - [x] **Coding Profiles & Analytics**:
-    - [x] GitHub stats card: total stars, public repos, followers, and visual contribution calendar graph
-    - [x] LeetCode stats card: total solved counter, Easy / Medium / Hard progress rings, global rank, and current streak
-  - [x] **Education & Certifications Section**:
-    - [x] University degrees, coursework, honors, and verified certifications with credential links
-  - [x] **Interactive Contact Section**:
-    - [x] Retro terminal contact form with Formspree/Web3Forms integration
-    - [x] One-click copy email button with toast notification
-    - [x] Social profiles grid (GitHub, LinkedIn, LeetCode, Email, Resume)
+- [x] **Phase 4: Retro Arcade Section & 2 Original Canvas Games**
+  - [x] Build **BUG BLASTER**: Space-Invaders-style pixel shooter defending against NullPointers, Race Conditions, and Memory Leaks with Coffee and Try/Catch power-ups.
+  - [x] Build **PACKET SNAKE**: Grid data packet stream collecting resume tech tokens (Go, Kafka, K8s, Java, Redis, Docker).
+  - [x] Plain HTML5 Canvas 2D + `requestAnimationFrame` with fixed-timestep loop (`< 15KB` gzipped, zero game engine dependencies, procedural pixel sprites).
+  - [x] Dynamic lazy-load `import()` triggered only when clicking "Insert Coin" (prefetched on hover/focus).
+  - [x] Reserved CSS aspect-ratio container to guarantee zero layout shift (CLS < 0.05).
+  - [x] Auto-pause on tab hidden (`visibilitychange`), off-screen (`IntersectionObserver`), or Esc/P key.
+  - [x] Konami code easter egg (`↑ ↑ ↓ ↓ ← → ← → B A`) to trigger cabinet.
+  - [x] Safe localStorage high score persistence.
+  - [x] End screen with CTA to projects: "You scored X, now check out my projects".
+  - [x] Standalone linkable page at `/arcade` with full sitemap integration.
+  - [x] Unit tests for pure arcade logic (`tests/arcade.test.ts`) and Playwright smoke test.
 
-- [x] **Phase 6: Projects Archive & Case Study Pages**
-  - [x] Implement `/projects` page:
-    - [x] Search input with instant client-side filtering
-    - [x] Multi-select tag/language filter pills
-    - [x] Sort dropdown (Stars, Date Updated, Name)
-    - [x] Grid of repository cards with live links and case study routes
-  - [x] Implement `/projects/[slug]` dynamic case study page:
-    - [x] `generateStaticParams()` to pre-render all repository pages
-    - [x] Breadcrumb navigation
-    - [x] Case study header with metadata badges
-    - [x] Markdown renderer (`react-markdown`, `remark-gfm`, `rehype-highlight`) rendering repo README with styled syntax highlighting
-    - [x] Project details sidebar (license, language breakdown, forks, issues)
+- [x] **Phase 5: Performance & SEO Optimization**
+  - [x] Install and configure `@next/bundle-analyzer` (`npm run analyze`).
+  - [x] Below-the-fold `content-visibility: auto` with `contain-intrinsic-size: 1px 700px`.
+  - [x] Performance budgets defined in `perf-budget.json`.
+  - [x] Lighthouse CI configuration in `lighthouserc.json` and GitHub Actions workflow.
+  - [x] PerformanceObserver Playwright test asserting CLS < 0.1.
+  - [x] Structured JSON-LD with Person, WebSite, BreadcrumbList, and SoftwareSourceCode schemas.
+  - [x] Update sitemap.xml (including `/arcade/`), robots.txt, manifest.json, and humans.txt.
 
-- [x] **Phase 7: Resume Page & Retro 404 Page**
-  - [x] Implement `/resume` page:
-    - [x] Web-rendered, clean printable resume layout with print stylesheet
-    - [x] Download PDF button linking to `/resume.pdf`
-    - [x] Print button and copy plain text button
-  - [x] Implement `app/not-found.tsx` retro 404 page:
-    - [x] Glitch animation, terminal prompt, and "Insert Coin / Reboot" button
-
-- [x] **Phase 8: SEO, Structured Data, Performance & Accessibility**
-  - [x] Configure `app/layout.tsx` metadata (title, description, keywords, Open Graph, Twitter cards, metadataBase)
-  - [x] Add JSON-LD schema generators (`Person`, `WebSite`, `BreadcrumbList`, `SoftwareSourceCode`)
-  - [x] Generate `sitemap.ts` and `robots.ts` for static export
-  - [x] Add `humans.txt` and `public/manifest.json`
-  - [x] Implement skip-to-content and verify ARIA accessibility throughout all interactive elements
-
-- [x] **Phase 9: Verification, Testing & Responsive Screenshots**
-  - [x] Run Next.js production build (`npm run build`) with static export validation (`out/` output)
-  - [x] Execute Playwright test suite capturing full-page screenshots at 375px, 768px, 1280px, and 1920px
-  - [x] Verify zero console errors, zero horizontal scrollbars, and full theme toggle fidelity
-
-- [x] **Phase 10: GitHub Actions Deployment & Final Documentation**
-  - [x] Create `.github/workflows/deploy.yml` with build, static export, `.nojekyll`, and GitHub Pages deployment action
-  - [x] Write comprehensive `README.md` with setup instructions, environment variables, instructions for replacing placeholders, adding `avatar.glb`, customizing overrides, and submitting to Google/Bing Webmasters
-  - [x] Compile final delivery report with placeholder checklist and deployment instructions
+- [x] **Phase 6: Quality Gate & Deployment**
+  - [x] `npm run build` static export compiled cleanly.
+  - [x] Playwright test suite passing across all viewports (375px, 768px, 1280px, 1920px).
+  - [x] Responsive screenshots generated.
+  - [x] Git commits structured logically and push to GitHub repository.

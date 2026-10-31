@@ -1,182 +1,130 @@
-# Claude-Inspired Retro Developer Portfolio
+# Aryan Pandey — Backend & Cloud-Native Engineer Portfolio
 
-A production-grade, SEO-optimized, highly responsive developer portfolio website built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and **React Three Fiber (3D)**.
+A production-grade, ultra-fast, SEO-optimized developer portfolio website built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, and **React Three Fiber (3D)**.
 
-Designed with a warm **"Claude-inspired palette with a tasteful retro twist"** featuring Fraunces editorial typography, terminal window cards, hard offset shadows, toggleable CRT scanlines, 8-bit sound effects, a head-tracking 3D hero avatar, an interactive projects archive, case study pages with rendered READMEs, and automated build-time data syncing from GitHub and LeetCode.
-
----
-
-## 🎨 Design Direction
-
-- **Claude Warm Editorial Palette**:
-  - **Light Mode**: Warm cream canvas (`#FAF8F5`), ink text (`#1A1917`), Claude terracotta accent (`#D97757`), soft putty surfaces (`#FFFFFF` / `#F2EEE6`).
-  - **Dark Mode**: Warm charcoal canvas (`#1E1D1B`), elevated surface (`#272623`), parchment white text (`#EDEAE3`), warm coral terracotta accent (`#E28468`).
-- **Typography**:
-  - Headings: Editorial serif (`Fraunces` via `next/font/google`)
-  - Body: Geometric sans (`Inter`)
-  - Code & Metrics: Technical mono (`JetBrains Mono`)
-  - Retro Accents: Pixel font (`Press Start 2P`)
-- **Retro Computing Touches**:
-  - Pixel-art & OS terminal window title bars with red/amber/green window controls
-  - Toggleable subtle CRT scanlines & screen vignette
-  - Hard offset shadows (`box-shadow: 4px 4px 0px var(--retro-shadow-color)`)
-  - Synthesized 8-bit Web Audio API sound effects (no external audio files needed)
-  - Skippable retro BIOS boot sequence (runs once per session)
-  - Floating bottom status dock with realtime viewport resolution indicator and `Cmd+K` Quick Jump command palette
-  - Desktop-only custom retro crosshair cursor
+Designed with a warm **"Claude-inspired palette with a tasteful retro computing twist"** featuring Fraunces editorial serif typography, terminal window chrome, hard offset shadows, toggleable CRT scanlines, 8-bit sound effects, evidence-based Skill Tree Loadout, an original Retro 2D Canvas Arcade cabinet, and static HTML pre-rendering.
 
 ---
 
-## 🚀 Key Features & Pages
+## 🚀 Key Features & Architectural Highlights
 
-1. **Home (`/`)**:
-   - **Hero**: Editorial serif headline, animated typewriter discipline tagline, CTA button cluster, and interactive 3D hero computer with cursor head-tracking (plus static SVG fallback for low-power/reduced-motion devices).
-   - **About**: Narrative bio, avatar window card, quick metric highlights, and an infinite rolling tech stack marquee.
-   - **Experience**: Vertical timeline with milestone nodes, company roles, quantifiable achievements, and technology tags.
-   - **Featured Projects (Bento Grid)**: 6 curated showcase projects with live demo links, case study routes, and star counts.
-   - **Skills Matrix**: Categorized interactive tabs (Languages, Frontend, Backend & Systems, Cloud & DevOps) with retro stepped proficiency meters.
-   - **Coding Profiles & Analytics**: Synced GitHub statistics (stars, repos, followers, contribution heatmap) and LeetCode analytics (solved counters, Easy/Medium/Hard breakdown, global ranking, streak).
-   - **Education & Certifications**: Academic degrees and verified cloud credentials.
-   - **Interactive Contact Section**: Retro terminal contact form with one-click email copy button and social channels.
+1. **Editorial Hero Section**:
+   - Semantic `<h1>` heading serving as the instant Largest Contentful Paint (LCP) element.
+   - Animated typewriter discipline tagline.
+   - Small `● OPEN TO OPPORTUNITIES` retro badge.
+   - Interactive 3D hero scene with head-tracking and idle-breathing animation. Automatically gates and falls back to a lightweight SVG terminal illustration on low-memory devices (<= 4GB), low-concurrency devices (<= 4 cores), saveData mode, reduced motion, or mobile widths (< 768px).
 
-2. **Projects Archive (`/projects`)**:
-   - Comprehensive archive of all public GitHub repositories.
-   - Real-time search query filtering (title, description, topics).
-   - Multi-select language filter pills and sort options (Most Starred, Recently Updated, Alphabetical).
+2. **Narrative & About**:
+   - First-person career narrative: full-stack roots in React and Node transitioning into distributed Go and Java 21 microservices, Kafka/RabbitMQ event pipelines, and Kubernetes orchestration.
+   - Infinite tech stack marquee containing only verified technologies from Aryan's resume, paused when off-screen and under `prefers-reduced-motion`.
 
-3. **Case Study Pages (`/projects/[slug]`)**:
-   - Dynamic route statically pre-rendered for every repository via `generateStaticParams()`.
-   - Formatted README rendered with `react-markdown` and `remark-gfm` syntax styling.
-   - Repository metadata, stargazers, forks, last updated, and topic tags.
+3. **Experience Timeline**:
+   - **Shyam Group (IntelliWorkz)**: 10+ module CRM managing 4,000+ leads, INR 6.3 Cr+ sales, 9-stage pipeline, 6-channel integrations, and local LLM RAG AI assistant (Qwen via Ollama).
+   - **Technomine**: 4 business apps (HRMS V1/V2, Travel Booking, Call Log Report Tool) across ASP.NET, React, and multiple databases.
+   - **Techno Hacks Edutech**: Responsive front-end applications with REST API integrations.
+   - Interactive mobile collapsible cards per role with technology chips.
 
-4. **Interactive Resume (`/resume`)**:
-   - Web-formatted curriculum vitae with dedicated `@media print` styling for 1-click clean PDF printing.
-   - Download PDF button linking to `/resume.pdf`.
-   - Copy plain text button.
+4. **Featured Projects (Bento Grid)**:
+   - **FleetPulse**: Cloud-Native Fleet Management (Go, gRPC, Kubernetes, NATS, AWS, Helm).
+   - **ApexPay**: Enterprise Payment Platform (Java 21, Spring Boot 3, Kafka, PostgreSQL, MongoDB, Kubernetes). Includes live demo.
+   - **LendStrangler**: Monolith to Microservices via Strangler Fig (TypeScript, Node.js, RabbitMQ, Docker). Includes live demo.
+   - Architecture badge row per card; "Problem -> Approach -> Result" summary on each case-study page.
 
-5. **Retro 404 Page (`app/not-found.tsx`)**:
-   - "404 - Cartridge Not Found / Kernel Panic" with "Insert Coin / Reboot" button.
+5. **Skill Tree // Loadout (Replaces Old Tech Matrix)**:
+   - Retro cartridge-slot UI grouped into window panels: Languages, Backend & Microservices, Cloud & DevOps, Databases, Frontend, AI/Data, Core CS.
+   - Strict evidence-based tier labels (`Daily Driver`, `Production`, `Built Projects`) and crawlable HTML proof links.
+   - Filter tabs (All, Backend, Cloud, Databases, Frontend, AI/Data, Core CS), keyboard accessible.
+
+6. **Trophy Case & Honors**:
+   - Dewang Mehta IT Award 2023 (NASSCOM & GTU)
+   - HackerRank 5-Star JavaScript Challenge
+   - 365-Day LeetCode Streak
+   - Google Developer Student Club Lead
+
+7. **Coding Profiles & Analytics**:
+   - GitHub statistics and contribution activity for `aryanpandeyce`.
+   - LeetCode analytics showing verified 365-Day Streak and "last synced" timestamps. Zero chart library dependencies (lightweight SVG/CSS).
+
+8. **Retro Arcade // Insert Coin**:
+   - Zero-dependency original 2D Canvas games (`< 15KB` gzipped):
+     1. **BUG BLASTER**: Space-Invaders-style shooter defending against NullPointers, Race Conditions, and Memory Leaks with Coffee and Try/Catch power-ups.
+     2. **PACKET SNAKE**: Data packet stream collecting resume tech tokens (Go, Kafka, K8s, Java, Redis, Docker) on a grid.
+   - Lazy-loaded dynamically on "Insert Coin" click (prefetched on hover/focus).
+   - Reserved aspect-ratio container (zero layout shift).
+   - Konami code easter egg (`↑ ↑ ↓ ↓ ← → ← → B A`) to trigger the arcade.
+   - Dedicated standalone page at `/arcade` with full sitemap integration.
+
+9. **Interactive Resume & Print View (`/resume`)**:
+   - Comprehensive web resume with print-friendly CSS.
+   - Phone number `+91-9054454394` is strictly displayed ONLY on this page.
+   - Safe PDF download check: checks for `public/resume.pdf` at build time.
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router) + TypeScript
-- **Export Mode**: Static HTML export (`output: 'export'`, `images: { unoptimized: true }`, `trailingSlash: true`)
-- **Deployment Target**: GitHub Pages (supports user root `username.github.io` and project sub-paths)
-- **Styling**: Tailwind CSS v4 with custom CSS variable design tokens
-- **3D Graphics**: Three.js, `@react-three/fiber`, `@react-three/drei` (lazy-loaded with SSR disabled)
-- **Motion**: Framer Motion
-- **Icons**: Lucide React + custom SVG brand icons
-- **Testing**: Playwright End-to-End & Multi-Viewport Responsive Test Suite (375px, 768px, 1280px, 1920px)
+- **Framework**: Next.js 16 (App Router) + TypeScript
+- **Export Mode**: Static Export (`output: 'export'`, `trailingSlash: true`, `images: { unoptimized: true }`)
+- **Styling**: Tailwind CSS v4 + Custom Retro CSS Variables
+- **3D Graphics**: Three.js + `@react-three/fiber` + `@react-three/drei` (gated and idle-deferred)
+- **Audio**: Synthesized Web Audio API 8-bit sound effects
+- **Testing**: Playwright test suite (375px, 768px, 1280px, 1920px viewports, dark mode, arcade unit tests, CLS observer)
+- **Deployment**: GitHub Pages via GitHub Actions
 
 ---
 
-## 💻 Local Development
+## 💻 Local Setup & Development
 
 ### 1. Installation
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/aryanpandeyce/portfolio.git
 cd portfolio
-
-# Install dependencies
 npm install
 ```
 
-### 2. Run Local Development Server
+### 2. Development Server
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### 3. Build & Test Static Export
+### 3. Build & Test
 ```bash
-# Build the production static site (emitted to /out)
+# Static production build (emitted to /out)
 npm run build
 
-# Run Playwright responsive test suite across viewports (375px, 768px, 1280px, 1920px)
+# Run Playwright responsive and arcade unit tests
 npm test
+
+# Run bundle analyzer
+npm run analyze
 ```
 
 ---
 
-## 📝 Customizing Your Data & Replacing Placeholders
+## 📊 Performance Budgets & Auditing
 
-All personal and project information is stored in clean TypeScript/JSON files so you can customize everything without editing component code:
-
-### 1. Profile Information (`data/profile.ts`)
-Edit `data/profile.ts` to replace placeholder details:
-- **`personal`**: Name, role, tagline, location, email, GitHub URL, LinkedIn URL, LeetCode URL, short bio.
-- **`stats`**: Years of experience, completed projects count.
-- **`experiences`**: Companies, roles, employment dates, quantifiable bullet achievements, technologies.
-- **`education`**: Universities, degrees, honors, graduation years.
-- **`certifications`**: Title, issuer, date, credential verification links.
-- **`skillCategories`**: Skill groups, proficiency percentages.
-
-### 2. Project Overrides (`data/projects.override.json`)
-Configure your featured repositories and custom metadata:
-- **`pinnedSlugs`**: Order of slugs to display first.
-- **`hiddenSlugs`**: Repositories you want to hide from the archive.
-- **`overrides`**: Per-repository custom descriptions, live demo URLs (`liveDemo`), architecture tags, or featured badges.
-
-### 3. Syncing Live GitHub & LeetCode Data (`scripts/fetch-data.mjs`)
-Run the data sync script locally or let GitHub Actions run it automatically:
-```bash
-# Set your handles (optional, defaults to profile settings)
-export GITHUB_USERNAME="your-github-username"
-export LEETCODE_USERNAME="your-leetcode-username"
-export GITHUB_TOKEN="ghp_your_optional_token"
-
-# Sync data
-npm run sync-data
-```
-The script updates `data/github.json` and `data/leetcode.json`. If network requests fail or rate limits are reached, the build automatically falls back to the committed snapshot so builds **never fail**.
-
-### 4. Custom 3D Avatar (`public/models/avatar.glb`)
-To use your own 3D avatar (e.g. from Ready Player Me or Blender):
-1. Place your Draco-compressed model at `public/models/avatar.glb`.
-2. The 3D hero scene is ready to receive your GLB model; until provided, it renders the interactive procedural retro computer workstation.
-
-### 5. Resume PDF (`public/resume.pdf`)
-Replace `public/resume.pdf` with your actual exported resume document. The `/resume` page download button points directly to this file.
+- **Budget Config**: [`perf-budget.json`](./perf-budget.json) defines max resource size limits (scripts <= 250KB, stylesheets <= 100KB, total <= 1MB).
+- **Lighthouse CI**: [`lighthouserc.json`](./lighthouserc.json) enforces:
+  - Performance >= 95 (warn on < 90)
+  - Accessibility >= 95 (error on < 90)
+  - SEO = 100 (error on < 95)
+  - CLS < 0.1
 
 ---
 
-## 🚢 Deploying to GitHub Pages
+## 🚢 GitHub Pages Deployment
 
-### Option A: Root Domain (`username.github.io`)
-1. Create a repository named `username.github.io`.
-2. Push this codebase to the `main` branch.
-3. In GitHub repo settings: **Settings** > **Pages** > **Build and deployment** > **Source**: Select **GitHub Actions**.
-4. The `.github/workflows/deploy.yml` workflow will automatically build, export static HTML with `.nojekyll`, and deploy your portfolio.
-
-### Option B: Project Subdirectory (`username.github.io/portfolio`)
-1. In repository **Settings** > **Secrets and variables** > **Actions** > **Variables**:
-   - Add variable `PORTFOLIO_GITHUB_USER` = your GitHub username.
-   - Add variable `PORTFOLIO_LEETCODE_USER` = your LeetCode username.
-2. In `next.config.ts`, `basePath` automatically detects `NEXT_PUBLIC_BASE_PATH` passed by the GitHub Pages deployment action!
+### Workflow Configuration:
+1. Ensure your repository Pages setting is configured to **GitHub Actions**:
+   - **Settings** > **Pages** > **Build and deployment** > **Source**: `GitHub Actions`
+2. Add repository Variables under **Settings** > **Secrets and variables** > **Actions** > **Variables**:
+   - `PORTFOLIO_GITHUB_USER`: `aryanpandeyce`
+   - `PORTFOLIO_LEETCODE_USER`: `[LEETCODE_USERNAME]`
+3. Push to `main` branch to trigger `.github/workflows/deploy.yml`.
 
 ---
 
-## 🔍 SEO & Search Engine Submission
-
-### 1. Google Search Console
-1. Go to [Google Search Console](https://search.google.com/search-console).
-2. Add your property (e.g. `https://your-username.github.io`).
-3. Verify ownership via HTML file, DNS, or meta tag.
-4. Navigate to **Sitemaps** and submit `https://your-username.github.io/sitemap.xml`.
-
-### 2. Bing Webmaster Tools
-1. Go to [Bing Webmaster Tools](https://www.bing.com/webmasters).
-2. Import directly from Google Search Console or add your URL.
-3. Submit `https://your-username.github.io/sitemap.xml`.
-
-### 3. SEO Checklist Included in this Project
-- [x] Canonical URL configured via `metadataBase`
-- [x] Structured JSON-LD `Person` & `WebSite` schema
-- [x] Dynamic Open Graph & Twitter Card metadata
-- [x] Single semantic `<h1>` per page with proper heading hierarchy
-- [x] `sitemap.xml` and `robots.txt` generated during static build
-- [x] Web App Manifest (`manifest.json`) & `humans.txt`
-- [x] Fast Core Web Vitals (zero server latency, static HTML)
+## 🔍 SEO Submission
+1. **Google Search Console**: Submit `https://aryanpandeyce.github.io/sitemap.xml`.
+2. **Bing Webmaster Tools**: Import or submit `https://aryanpandeyce.github.io/sitemap.xml`.
