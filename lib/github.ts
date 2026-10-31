@@ -20,6 +20,9 @@ export interface GitHubRepo {
   architecture?: string;
   customDescription?: string;
   liveDemo?: string;
+  problem?: string;
+  approach?: string;
+  result?: string;
 }
 
 export interface GitHubUser {
@@ -34,6 +37,7 @@ export interface GitHubUser {
   total_stars: number;
   total_forks: number;
   contributions: number;
+  lastSynced?: string;
 }
 
 export function getGitHubUser(): GitHubUser {

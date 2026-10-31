@@ -12,6 +12,8 @@ export interface LeetCodeTopic {
 
 export interface LeetCodeStats {
   username: string;
+  isPlaceholder?: boolean;
+  todoNotice?: string;
   totalSolved: number;
   totalQuestions: number;
   easySolved: number;
@@ -22,13 +24,15 @@ export interface LeetCodeStats {
   totalHard: number;
   acceptanceRate: number;
   ranking: number;
-  contributionPoints: number;
-  reputation: number;
+  contributionPoints?: number;
+  reputation?: number;
   streak: number;
+  verifiedStreakBadge?: string;
   badges: LeetCodeBadge[];
-  topicBreakdown: LeetCodeTopic[];
+  topicBreakdown?: LeetCodeTopic[];
+  lastSynced?: string;
 }
 
 export function getLeetCodeStats(): LeetCodeStats {
-  return leetcodeData as LeetCodeStats;
+  return leetcodeData as unknown as LeetCodeStats;
 }

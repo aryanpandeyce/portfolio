@@ -6,35 +6,35 @@ import confetti from "canvas-confetti";
 import { profileData } from "@/data/profile";
 import { retroAudio } from "@/lib/audio";
 import { Hero3DWrapper } from "@/components/hero/hero-3d-wrapper";
-import { ArrowRight, FileText, Mail, Sparkles, Terminal, Play } from "lucide-react";
+import { ArrowRight, FileText, Mail, Terminal, Play } from "lucide-react";
+
+const HERO_TITLES = [
+  "Backend & Cloud-Native Engineer",
+  "Go & Java Distributed Systems",
+  "Kubernetes & Cloud Infrastructure",
+  "Event-Driven Saga Architectures",
+];
 
 export function HeroSection() {
-  const titles = [
-    "Full-Stack Engineer",
-    "Distributed Systems Builder",
-    "Cloud & DevOps Architect",
-    "Tactile Interface Designer",
-  ];
-
   const [titleIndex, setTitleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentFullTitle = titles[titleIndex];
-    const typingSpeed = isDeleting ? 40 : 80;
+    const currentFullTitle = HERO_TITLES[titleIndex];
+    const typingSpeed = isDeleting ? 35 : 70;
 
     const timer = setTimeout(() => {
       if (!isDeleting) {
         setDisplayText(currentFullTitle.substring(0, displayText.length + 1));
         if (displayText.length === currentFullTitle.length) {
-          setTimeout(() => setIsDeleting(true), 1600);
+          setTimeout(() => setIsDeleting(true), 1800);
         }
       } else {
         setDisplayText(currentFullTitle.substring(0, displayText.length - 1));
         if (displayText.length === 0) {
           setIsDeleting(false);
-          setTitleIndex((prev) => (prev + 1) % titles.length);
+          setTitleIndex((prev) => (prev + 1) % HERO_TITLES.length);
         }
       }
     }, typingSpeed);
@@ -62,20 +62,28 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Editorial Headline & CTAs */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Terminal Greeting Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border-2 border-[var(--border)] bg-[var(--surface)] shadow-[2px_2px_0px_var(--retro-shadow-color)]">
-              <Terminal className="w-3.5 h-3.5 text-[var(--accent)]" />
-              <span className="font-mono-code text-xs font-semibold text-[var(--foreground)]">
-                &gt; SYSTEM.STATUS: ONLINE
-              </span>
-              <span className="w-2 h-2 rounded-full bg-[#27C93F] animate-pulse ml-1" />
+            {/* Terminal Greeting Tag & Open to Opportunities Badge */}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border-2 border-[var(--border)] bg-[var(--surface)] shadow-[2px_2px_0px_var(--retro-shadow-color)]">
+                <Terminal className="w-3.5 h-3.5 text-[var(--accent)]" />
+                <span className="font-mono-code text-xs font-semibold text-[var(--foreground)]">
+                  &gt; SYSTEM.STATUS: ONLINE
+                </span>
+                <span className="w-2 h-2 rounded-full bg-[#27C93F] animate-pulse ml-1" />
+              </div>
+
+              {/* Retro Open to Opportunities Badge */}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#27C93F]/40 bg-[#27C93F]/10 text-[#27C93F] font-mono-code text-xs font-semibold shadow-[1px_1px_0px_var(--retro-shadow-color)]">
+                <span className="w-2 h-2 rounded-full bg-[#27C93F] animate-ping" />
+                <span>OPEN TO OPPORTUNITIES</span>
+              </div>
             </div>
 
             {/* Editorial Serif Heading */}
             <h1 className="font-serif-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[var(--foreground)] tracking-tight leading-[1.12]">
-              Crafting resilient systems &amp;{" "}
+              Crafting scalable backends &amp;{" "}
               <span className="text-[var(--accent)] underline decoration-wavy decoration-[var(--border)] decoration-2">
-                tactile interfaces
+                observable microservices
               </span>
               .
             </h1>
@@ -93,8 +101,8 @@ export function HeroSection() {
               <span className="font-semibold text-[var(--foreground)]">
                 {profileData.personal.name}
               </span>
-              . I engineer high-throughput cloud backends, resilient event pipelines, and
-              delightfully refined web applications.
+              . Full-stack roots in React and Node. Building scalable, observable microservices with
+              Go, Java, and Kubernetes.
             </p>
 
             {/* Retro CTA Button Cluster */}
@@ -140,7 +148,7 @@ export function HeroSection() {
             {/* Quick Skills / Stack Pills */}
             <div className="pt-4 flex flex-wrap items-center gap-2 text-xs font-mono-code text-[var(--foreground-muted)]">
               <span className="text-[var(--foreground)] font-semibold">CORE TECH:</span>
-              {["TypeScript", "Go", "Next.js", "PostgreSQL", "Kafka", "AWS"].map((tag) => (
+              {["Go", "Java 21", "Kubernetes", "Kafka", "PostgreSQL", "Docker", "AWS"].map((tag) => (
                 <span
                   key={tag}
                   className="px-2.5 py-1 rounded-md border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] shadow-[1px_1px_0px_var(--retro-shadow-color)]"

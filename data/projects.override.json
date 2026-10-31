@@ -1,49 +1,40 @@
 {
   "pinnedSlugs": [
-    "synth-cache",
-    "retro-term-react",
-    "stream-craft",
-    "cloud-sentinel",
-    "pulse-kv",
-    "pixel-craft-canvas"
+    "fleetpulse",
+    "payment-platform-java",
+    "lendstrangler"
   ],
   "hiddenSlugs": [],
   "overrides": {
-    "synth-cache": {
-      "featuredTag": "Distributed Systems",
-      "customDescription": "High-throughput distributed in-memory cache written in Go with Raft consensus, consistent hashing, and sub-millisecond p99 latency.",
-      "liveDemo": "https://synth-cache.dev",
-      "architecture": "Raft Consensus / Go / Zero-Allocation Serialization"
+    "fleetpulse": {
+      "name": "FleetPulse",
+      "featuredTag": "Cloud-Native Microservices",
+      "customDescription": "Scalable, highly available SaaS of Go microservices (gRPC + REST) for fleet telemetry, device claiming, and firmware compliance.",
+      "liveDemo": "",
+      "architecture": "Go / gRPC / Kubernetes / PostgreSQL / NATS / AWS / Helm",
+      "problem": "Fleet operators struggled with managing heterogeneous IoT hardware, firmware compliance drift, and handling high-volume telemetry ingestion under burst traffic.",
+      "approach": "Architected Go microservices using gRPC and REST with multi-tenant JWT RBAC. Implemented core DSA paths: consistent hashing for device sharding, min-heap job scheduler, token-bucket rate limiter, LRU cache, and EWMA/z-score anomaly detection with leader election and dead-letter queues. Provisioned on Kubernetes with Helm and HPA, monitored with Prometheus/Grafana, and automated via GitHub Actions with an 80%+ coverage gate.",
+      "result": "Engineered idempotent retries and DLQs that handle burst telemetry, validated resilience with k6 load testing, and established automated canary and rolling updates."
     },
-    "retro-term-react": {
-      "featuredTag": "Frontend Tooling",
-      "customDescription": "A tactile retro terminal emulator component for React & Next.js featuring ANSI color parsing, scanlines, and VT100 escape codes.",
-      "liveDemo": "https://retro-term.dev",
-      "architecture": "React 19 / TypeScript / Web Audio API"
+    "payment-platform-java": {
+      "name": "ApexPay",
+      "featuredTag": "Event-Driven Payments",
+      "customDescription": "Enterprise payment platform with 6 Spring Boot microservices, choreographed Saga over 4 Kafka topics, and Transactional Outbox pattern.",
+      "liveDemo": "https://aryanpandeyce.github.io/payment-platform-java/",
+      "architecture": "Java 21 / Spring Boot 3 / Kafka / PostgreSQL / MongoDB / Kubernetes",
+      "problem": "High-volume distributed transactions faced data inconsistency, partial failure during payment processing, and security compliance risks.",
+      "approach": "Built 6 Spring Boot microservices across an 8-module Maven architecture using choreographed Sagas across 4 Kafka topics, Transactional Outbox pattern, idempotency keys, and dead-letter topics. Implemented Spring Security with BCrypt(12), 15-minute rotating JWTs, RBAC, account lockout, and rate limiting. Verified with TDD using JUnit 5, Mockito, and Testcontainers.",
+      "result": "Achieved zero distributed state divergence across payment workflows. Enforced automated 6-stage GitLab CI/CD with SonarQube quality gates, Trivy container security scans, and OpenShift Kubernetes deployment monitored via 3 Grafana dashboards and ELK."
     },
-    "stream-craft": {
-      "featuredTag": "Event Streaming",
-      "customDescription": "Real-time reactive analytics streaming pipeline with WebSockets, Kafka connector, and live canvas dashboard visualization.",
-      "liveDemo": "https://stream-craft.dev",
-      "architecture": "Kafka / WebSockets / Node.js Streams / Canvas"
-    },
-    "cloud-sentinel": {
-      "featuredTag": "Cloud Security",
-      "customDescription": "Automated security compliance & cost-optimization scanner for AWS infrastructure built with Python and Terraform.",
-      "liveDemo": "https://sentinel-audit.dev",
-      "architecture": "AWS Boto3 / Python / Terraform / Slack Webhooks"
-    },
-    "pulse-kv": {
-      "featuredTag": "Storage Engine",
-      "customDescription": "Persistent Log-Structured Merge (LSM) key-value storage engine engineered in Go with SSTable compaction and Bloom filters.",
-      "liveDemo": "https://pulse-kv.dev",
-      "architecture": "Go / LSM-Tree / SSTables / Bloom Filters"
-    },
-    "pixel-craft-canvas": {
-      "featuredTag": "Creative Tech",
-      "customDescription": "Collaborative real-time multiplayer pixel canvas with WebSockets, undo/redo state trees, and sprite sheet export.",
-      "liveDemo": "https://pixel-craft.dev",
-      "architecture": "TypeScript / HTML5 Canvas / WebSockets"
+    "lendstrangler": {
+      "name": "LendStrangler",
+      "featuredTag": "Monolith to Microservices",
+      "customDescription": "Incremental decomposition of a legacy lending monolith into 3 microservices using the Strangler Fig pattern with shadow verification.",
+      "liveDemo": "https://aryanpandeyce.github.io/LendStrangler/",
+      "architecture": "TypeScript / Node.js / RabbitMQ / React / Docker / ADRs",
+      "problem": "A legacy monolith lending system suffered from slow release cycles, high underwriting latency (85ms), and tight coupling between credit evaluation and loan servicing.",
+      "approach": "Decomposed the system into 3 independent microservices via the Strangler Fig pattern. Ran in shadow mode to verify identical output against production traffic before canary routing from 5% to 100%. Implemented a 5-event Saga with compensating transactions over RabbitMQ, Transactional Outbox, and idempotent consumers, documented comprehensively across 6 Architectural Decision Records (ADRs).",
+      "result": "Achieved 0.00% response diff during shadow mode, zero planned downtime during rollout, and slashed underwriting latency by 77% (from 85ms down to 19ms) backed by an 80%+ CI/CD coverage gate."
     }
   }
 }

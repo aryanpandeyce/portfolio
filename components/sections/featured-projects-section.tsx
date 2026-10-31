@@ -7,7 +7,6 @@ import { retroAudio } from "@/lib/audio";
 import {
   ExternalLink,
   Star,
-  GitFork,
   ArrowRight,
   Terminal,
   Code2,
@@ -28,7 +27,7 @@ export function FeaturedProjectsSection({ projects }: FeaturedProjectsSectionPro
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 font-mono-code text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">
               <Terminal className="w-3.5 h-3.5" />
-              <span>// 03. FEATURED WORKS</span>
+              <span>{"// 03. FEATURED WORKS"}</span>
             </div>
             <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[var(--foreground)] tracking-tight">
               Selected Open-Source Projects &amp; Systems.
@@ -102,11 +101,23 @@ export function FeaturedProjectsSection({ projects }: FeaturedProjectsSectionPro
                       {repo.description}
                     </p>
 
-                    {/* Architecture Pill if available */}
+                    {/* Architecture Badge Row */}
                     {repo.architecture && (
-                      <div className="p-2.5 rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] text-xs font-mono-code text-[var(--foreground-muted)] flex items-center gap-2">
-                        <Code2 className="w-3.5 h-3.5 text-[var(--accent)] shrink-0" />
-                        <span className="truncate">{repo.architecture}</span>
+                      <div className="space-y-1.5 pt-1">
+                        <div className="flex items-center gap-1.5 text-[11px] font-mono-code font-semibold text-[var(--accent)]">
+                          <Code2 className="w-3.5 h-3.5" />
+                          <span>ARCHITECTURE:</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {repo.architecture.split("/").map((archItem, aIdx) => (
+                            <span
+                              key={aIdx}
+                              className="px-2 py-0.5 rounded text-[10px] font-mono-code bg-[var(--surface-muted)] text-[var(--foreground)] border border-[var(--border)] shadow-[1px_1px_0px_var(--retro-shadow-color)]"
+                            >
+                              {archItem.trim()}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>

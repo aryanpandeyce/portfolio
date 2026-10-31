@@ -11,7 +11,6 @@ import {
   Send,
   Terminal,
   ExternalLink,
-  MessageSquare,
   Sparkles,
 } from "lucide-react";
 
@@ -52,7 +51,7 @@ export function ContactSection() {
         <div className="mb-14 space-y-2">
           <div className="inline-flex items-center gap-2 font-mono-code text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">
             <Terminal className="w-3.5 h-3.5" />
-            <span>// 07. COMMUNICATION PROTOCOL</span>
+            <span>{"// 08. TRANSMIT DISPATCH"}</span>
           </div>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[var(--foreground)] tracking-tight">
             Initiate Contact &amp; Opportunities.

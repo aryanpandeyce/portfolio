@@ -6,8 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(ROOT_DIR, "data");
 
-const GITHUB_USERNAME = process.env.GITHUB_USERNAME || "alexrivera-dev";
-const LEETCODE_USERNAME = process.env.LEETCODE_USERNAME || "alexrivera_dev";
+const GITHUB_USERNAME = process.env.GITHUB_USERNAME || "aryanpandeyce";
+const LEETCODE_USERNAME = process.env.LEETCODE_USERNAME || "";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
 
 async function fetchGitHubData() {

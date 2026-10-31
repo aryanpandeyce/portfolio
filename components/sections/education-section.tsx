@@ -13,7 +13,7 @@ export function EducationSection() {
         <div className="mb-14 space-y-2">
           <div className="inline-flex items-center gap-2 font-mono-code text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">
             <Terminal className="w-3.5 h-3.5" />
-            <span>// 06. ACADEMICS &amp; CREDENTIALS</span>
+            <span>{"// 07. ACADEMICS & CREDENTIALS"}</span>
           </div>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[var(--foreground)] tracking-tight">
             Education &amp; Industry Certifications.

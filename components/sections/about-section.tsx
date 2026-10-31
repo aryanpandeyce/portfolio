@@ -2,47 +2,45 @@
 
 import React from "react";
 import { profileData } from "@/data/profile";
-import { retroAudio } from "@/lib/audio";
 import {
   Code,
   Terminal,
-  Cpu,
   Layers,
   Sparkles,
-  Award,
   Zap,
   ShieldCheck,
-  CheckCircle2,
+  Cpu,
 } from "lucide-react";
 
 export function AboutSection() {
   const stats = [
-    { label: "Years Experience", value: `${profileData.stats.yearsOfExperience}+`, icon: Zap },
-    { label: "GitHub Commits", value: `${profileData.stats.githubContributions}+`, icon: Code },
-    { label: "LeetCode Solved", value: `${profileData.stats.leetcodeSolved}+`, icon: Award },
-    { label: "Shipped Projects", value: `${profileData.stats.projectsCompleted}+`, icon: Layers },
+    { label: "Years Experience", value: profileData.stats.yearsOfExperience, icon: Zap },
+    { label: "Leads Managed", value: profileData.stats.leadsManaged, icon: Layers },
+    { label: "CRM Sales Tracked", value: profileData.stats.crmSalesTracked, icon: ShieldCheck },
+    { label: "Shipped Apps", value: profileData.stats.projectsCompleted, icon: Code },
   ];
 
   const marqueeTechnologies = [
-    "TypeScript", "Go (Golang)", "Next.js", "React 19", "Node.js", "PostgreSQL",
-    "Redis", "Apache Kafka", "Docker", "Kubernetes", "AWS Cloud", "GraphQL",
-    "Tailwind CSS", "Framer Motion", "Three.js", "Terraform", "Playwright", "Python"
+    "Go", "Java 21", "Kubernetes", "Apache Kafka", "PostgreSQL", "Docker",
+    "RabbitMQ", "Spring Boot 3", "Spring Security", "Redis", "AWS (S3/SQS)",
+    "gRPC", "Terraform", "TypeScript", "Node.js", "Express", "NATS",
+    "MongoDB", "MySQL", "ReactJS", "Redux", "Prometheus", "Grafana", "ELK Stack"
   ];
 
   const principles = [
     {
-      title: "Architectural Rigor",
-      desc: "Designing resilient distributed systems with low blast radius, strong types, and graceful degradation.",
+      title: "Distributed Reliability",
+      desc: "Architecting event-driven microservices with Saga compensation, Transactional Outbox, and idempotent processing.",
       icon: ShieldCheck,
     },
     {
-      title: "Performance Obsession",
-      desc: "Sub-millisecond API response targets, tight memory profiles, and optimized Core Web Vitals.",
+      title: "Production Observability",
+      desc: "Actionable Prometheus metrics, Grafana dashboards, ELK tracing, and automated k6 load testing.",
       icon: Zap,
     },
     {
-      title: "Tactile User Craft",
-      desc: "Marrying retro computing warmth with modern accessibility, micro-animations, and fluid ergonomics.",
+      title: "Pragmatic AI & Full-Stack",
+      desc: "Delivering self-hosted RAG LLM assistants on private infrastructure married with clean, responsive user interfaces.",
       icon: Sparkles,
     },
   ];
@@ -54,10 +52,10 @@ export function AboutSection() {
         <div className="mb-14 space-y-2">
           <div className="inline-flex items-center gap-2 font-mono-code text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">
             <Terminal className="w-3.5 h-3.5" />
-            <span>// 01. ABOUT ME</span>
+            <span>{"// 01. ABOUT ME"}</span>
           </div>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[var(--foreground)] tracking-tight">
-            Crafting software with engineering rigor and editorial care.
+            Crafting software with engineering rigor and operational observability.
           </h2>
         </div>
 
@@ -73,7 +71,7 @@ export function AboutSection() {
                   <span className="dot-green" />
                 </div>
                 <span className="font-mono-code text-xs font-semibold text-[var(--foreground)]">
-                  AVATAR_SYS.EXE
+                  ARYAN_PANDEY.EXE
                 </span>
                 <span className="text-[10px] font-mono-code text-[#27C93F]">● OK</span>
               </div>
@@ -81,11 +79,10 @@ export function AboutSection() {
               {/* Stylized Pixel Avatar Frame */}
               <div className="p-6 bg-[var(--surface)] flex flex-col items-center text-center">
                 <div className="w-36 h-36 rounded-2xl border-2 border-[var(--border-retro)] bg-[var(--surface-muted)] p-2 shadow-[4px_4px_0px_var(--retro-shadow-color)] flex items-center justify-center mb-4 relative group">
-                  {/* Stylized Retro Avatar Graphic */}
                   <div className="w-full h-full rounded-xl bg-gradient-to-tr from-[var(--border)] to-[var(--surface)] flex flex-col items-center justify-center font-mono text-xs text-[var(--accent)] select-none">
-                    <span className="text-3xl mb-1">👨‍💻</span>
-                    <span className="font-mono-code text-[10px] text-[var(--foreground-muted)]">
-                      ALEX.RIVERA
+                    <span className="text-3xl mb-1">⚡</span>
+                    <span className="font-mono-code text-[10px] text-[var(--foreground-muted)] font-semibold">
+                      ARYAN.PANDEY
                     </span>
                   </div>
                 </div>
@@ -102,18 +99,18 @@ export function AboutSection() {
 
                 <div className="w-full mt-4 pt-4 border-t border-[var(--border)] flex justify-around text-xs font-mono-code">
                   <div>
-                    <div className="font-bold text-[var(--foreground)]">5+ YRS</div>
+                    <div className="font-bold text-[var(--foreground)]">3+ YRS</div>
                     <div className="text-[10px] text-[var(--foreground-muted)]">EXP</div>
                   </div>
                   <div className="border-r border-[var(--border)]" />
                   <div>
-                    <div className="font-bold text-[var(--foreground)]">480+</div>
-                    <div className="text-[10px] text-[var(--foreground-muted)]">LEETCODE</div>
+                    <div className="font-bold text-[var(--foreground)]">365-DAY</div>
+                    <div className="text-[10px] text-[var(--foreground-muted)]">STREAK</div>
                   </div>
                   <div className="border-r border-[var(--border)]" />
                   <div>
-                    <div className="font-bold text-[var(--foreground)]">1.4K</div>
-                    <div className="text-[10px] text-[var(--foreground-muted)]">COMMITS</div>
+                    <div className="font-bold text-[var(--foreground)]">10+</div>
+                    <div className="text-[10px] text-[var(--foreground-muted)]">MODULES</div>
                   </div>
                 </div>
               </div>
@@ -127,16 +124,14 @@ export function AboutSection() {
                 The Narrative
               </h3>
               <p className="text-base text-[var(--foreground-muted)] leading-relaxed">
-                I am a senior full-stack engineer and cloud architect dedicated to building dependable,
-                performant internet software. My journey began tinkering with low-level systems and
-                retro terminal protocols, which shaped my conviction that software should feel snappy,
-                tactile, and durable under heavy production load.
+                I am <strong className="text-[var(--foreground)]">Aryan Pandey</strong>, a{" "}
+                <strong className="text-[var(--foreground)]">
+                  Backend Engineer specializing in Go, Java, and Microservices
+                </strong>
+                . With strong full-stack roots in React and Node.js, I transitioned deeper into distributed systems, event-driven architectures with Kafka and RabbitMQ, and cloud-native orchestration with Kubernetes and Docker.
               </p>
               <p className="text-base text-[var(--foreground-muted)] leading-relaxed">
-                Over the past half-decade, I have architected streaming backends handling millions of
-                daily events, optimized high-traffic database query paths, and built accessible,
-                type-safe user interfaces with Next.js and TypeScript. I enjoy writing clean,
-                idiomatic code and contributing to open-source developer tooling.
+                At Shyam Group, I architected a 10-module SaaS CRM managing 4,000+ leads and INR 6.3 Cr+ in sales, unifying 6 lead channels and deploying an on-premise RAG AI assistant with Ollama (Qwen) to query live pipeline state privately. I ship production code backed by CI/CD quality gates, TDD, and deep observability.
               </p>
 
               {/* Core Principles */}
@@ -190,12 +185,12 @@ export function AboutSection() {
         <div className="retro-card p-4 overflow-hidden bg-[var(--surface)]">
           <div className="flex items-center gap-2 mb-3 px-2 font-mono-code text-xs text-[var(--foreground-muted)]">
             <Cpu className="w-3.5 h-3.5 text-[var(--accent)]" />
-            <span className="font-semibold text-[var(--foreground)]">TECHNOLOGY MATRIX:</span>
-            <span>Rolling active stack</span>
+            <span className="font-semibold text-[var(--foreground)]">VERIFIED PRODUCTION STACK:</span>
+            <span>Continuous rolling overview</span>
           </div>
 
           <div className="relative flex overflow-x-hidden group py-1">
-            <div className="animate-marquee flex gap-3 whitespace-nowrap">
+            <div className="animate-marquee flex gap-3 whitespace-nowrap group-hover:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]">
               {marqueeTechnologies.concat(marqueeTechnologies).map((tech, idx) => (
                 <span
                   key={idx}

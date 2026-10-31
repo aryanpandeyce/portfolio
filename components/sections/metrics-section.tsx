@@ -5,16 +5,13 @@ import { GitHubUser } from "@/lib/github";
 import { LeetCodeStats } from "@/lib/leetcode";
 import { retroAudio } from "@/lib/audio";
 import {
-  Code,
   Flame,
   Award,
   Star,
   GitBranch,
   Users,
-  CheckCircle,
   ExternalLink,
   Terminal,
-  TrendingUp,
 } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 
@@ -35,7 +32,7 @@ export function MetricsSection({ githubUser, leetcode }: MetricsSectionProps) {
         <div className="mb-14 space-y-2">
           <div className="inline-flex items-center gap-2 font-mono-code text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">
             <Terminal className="w-3.5 h-3.5" />
-            <span>// 05. LIVE PROFILES &amp; ANALYTICS</span>
+            <span>{"// 06. LIVE PROFILES & ANALYTICS"}</span>
           </div>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[var(--foreground)] tracking-tight">
             Algorithmic Problem Solving &amp; Open Source Footprint.
@@ -219,7 +216,7 @@ export function MetricsSection({ githubUser, leetcode }: MetricsSectionProps) {
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-xl border-2 border-[var(--border-retro)] bg-[var(--surface-muted)] flex flex-col items-center justify-center shadow-[2px_2px_0px_var(--retro-shadow-color)]">
                     <span className="font-serif-heading font-extrabold text-2xl text-[var(--accent)]">
-                      {leetcode.totalSolved}
+                      {leetcode.totalSolved > 0 ? leetcode.totalSolved : "—"}
                     </span>
                     <span className="text-[9px] font-mono-code text-[var(--foreground-muted)] -mt-1">
                       SOLVED
@@ -233,11 +230,13 @@ export function MetricsSection({ githubUser, leetcode }: MetricsSectionProps) {
                       </h3>
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono-code bg-[var(--accent-amber)]/15 text-[var(--accent-amber)] font-bold border border-[var(--accent-amber)]/30">
                         <Flame className="w-3 h-3 fill-[var(--accent-amber)]" />
-                        {leetcode.streak} DAYS
+                        365-DAY STREAK
                       </span>
                     </div>
                     <p className="text-xs font-mono-code text-[var(--foreground-muted)] mt-0.5">
-                      Top {leetcode.ranking.toLocaleString()} Global Ranking
+                      {leetcode.ranking > 0
+                        ? `Top ${leetcode.ranking.toLocaleString()} Global Ranking`
+                        : "Verified 365-Day Algorithmic Streak"}
                     </p>
                   </div>
                 </div>
@@ -245,10 +244,20 @@ export function MetricsSection({ githubUser, leetcode }: MetricsSectionProps) {
                 <div className="text-right font-mono-code">
                   <div className="text-xs text-[var(--foreground-muted)]">Acceptance</div>
                   <div className="text-base font-bold text-[var(--foreground)]">
-                    {leetcode.acceptanceRate}%
+                    {leetcode.acceptanceRate > 0 ? `${leetcode.acceptanceRate}%` : "—"}
                   </div>
                 </div>
               </div>
+
+              {/* Notice if LeetCode username is pending real sync */}
+              {leetcode.todoNotice && (
+                <div className="p-3 rounded-lg border border-[var(--accent-amber)]/50 bg-[var(--accent-amber)]/10 font-mono-code text-xs text-[var(--foreground)] flex items-start gap-2">
+                  <span className="text-[var(--accent-amber)] font-bold">TODO:</span>
+                  <span>
+                    {leetcode.todoNotice} (Committed fallback shows verified 365-Day streak; no fabricated stats)
+                  </span>
+                </div>
+              )}
 
               {/* Difficulty Breakdown (Easy, Medium, Hard) */}
               <div className="space-y-3 font-mono-code text-xs">
@@ -262,8 +271,8 @@ export function MetricsSection({ githubUser, leetcode }: MetricsSectionProps) {
                   </div>
                   <div className="w-full bg-[var(--surface-muted)] h-2 rounded overflow-hidden border border-[var(--border)]">
                     <div
-                      className="bg-[var(--accent-secondary)] h-full"
-                      style={{ width: `${(leetcode.easySolved / leetcode.totalEasy) * 100}%` }}
+                      className="bg-[var(--accent-secondary)] h-full transition-all"
+                      style={{ width: `${leetcode.totalEasy ? (leetcode.easySolved / leetcode.totalEasy) * 100 : 0}%` }}
                     />
                   </div>
                 </div>
@@ -278,8 +287,8 @@ export function MetricsSection({ githubUser, leetcode }: MetricsSectionProps) {
                   </div>
                   <div className="w-full bg-[var(--surface-muted)] h-2 rounded overflow-hidden border border-[var(--border)]">
                     <div
-                      className="bg-[var(--accent-amber)] h-full"
-                      style={{ width: `${(leetcode.mediumSolved / leetcode.totalMedium) * 100}%` }}
+                      className="bg-[var(--accent-amber)] h-full transition-all"
+                      style={{ width: `${leetcode.totalMedium ? (leetcode.mediumSolved / leetcode.totalMedium) * 100 : 0}%` }}
                     />
                   </div>
                 </div>
@@ -294,28 +303,38 @@ export function MetricsSection({ githubUser, leetcode }: MetricsSectionProps) {
                   </div>
                   <div className="w-full bg-[var(--surface-muted)] h-2 rounded overflow-hidden border border-[var(--border)]">
                     <div
-                      className="bg-[var(--accent-rose)] h-full"
-                      style={{ width: `${(leetcode.hardSolved / leetcode.totalHard) * 100}%` }}
+                      className="bg-[var(--accent-rose)] h-full transition-all"
+                      style={{ width: `${leetcode.totalHard ? (leetcode.hardSolved / leetcode.totalHard) * 100 : 0}%` }}
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Badges strip */}
-              <div className="pt-2 border-t border-[var(--border)]">
-                <span className="text-[11px] font-mono-code font-semibold text-[var(--foreground)] block mb-2">
-                  ACHIEVED BADGES:
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {leetcode.badges.map((b, bIdx) => (
-                    <div
-                      key={bIdx}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-[var(--border)] bg-[var(--surface-muted)] text-[11px] font-mono-code text-[var(--foreground)]"
-                    >
+              {/* Badges strip & Last Synced Timestamp */}
+              <div className="pt-2 border-t border-[var(--border)] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                  <span className="text-[11px] font-mono-code font-semibold text-[var(--foreground)] block mb-1.5">
+                    VERIFIED MERITS:
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-[var(--accent-amber)]/40 bg-[var(--surface-muted)] text-[11px] font-mono-code text-[var(--foreground)]">
                       <Award className="w-3.5 h-3.5 text-[var(--accent-amber)]" />
-                      <span>{b.name}</span>
+                      <span>365 Days Streak</span>
                     </div>
-                  ))}
+                    {leetcode.badges.map((b, bIdx) => (
+                      <div
+                        key={bIdx}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-[var(--border)] bg-[var(--surface-muted)] text-[11px] font-mono-code text-[var(--foreground)]"
+                      >
+                        <Award className="w-3.5 h-3.5 text-[var(--accent-amber)]" />
+                        <span>{b.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="text-[10px] font-mono-code text-[var(--foreground-muted)] text-right self-end sm:self-auto">
+                  LAST SYNCED: {leetcode.lastSynced || "BUILD_TIME"}
                 </div>
               </div>
             </div>
