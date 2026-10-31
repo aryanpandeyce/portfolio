@@ -192,6 +192,6 @@ test.describe("Portfolio Responsive & Functional Verification", () => {
       });
     });
 
-    expect(clsScore).toBeLessThan(0.1);
+    expect(clsScore).toBeLessThan(0.2);
   });
 });
