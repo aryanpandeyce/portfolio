@@ -135,7 +135,7 @@ test.describe("Portfolio Responsive & Functional Verification", () => {
     }
   });
 
-  test("Resume page renders formatted web view and phone number strictly here", async ({
+  test("Resume page renders formatted web view without exposing phone number", async ({
     page,
   }) => {
     await page.addInitScript(() => {
@@ -145,7 +145,10 @@ test.describe("Portfolio Responsive & Functional Verification", () => {
     await page.waitForTimeout(300);
 
     await expect(page.locator("h1")).toContainText("Aryan Pandey");
-    await expect(page.locator("text=+91-9054454394")).toBeVisible();
+    await expect(page.locator("text=aryanpandey.ce@gmail.com")).toBeVisible();
+    const resumeContent = await page.content();
+    expect(resumeContent).not.toContain("+91-9054454394");
+    expect(resumeContent).not.toContain("9054454394");
     await expect(page.locator("text=EXECUTIVE SUMMARY")).toBeVisible();
     await expect(page.locator("text=Shyam Group (IntelliWorkz)")).toBeVisible();
 

@@ -53,7 +53,7 @@ export interface ProfileData {
     secondaryLine: string;
     location: string;
     email: string;
-    phone: string;
+    phone?: string;
     githubUrl: string;
     githubUsername: string;
     leetcodeUsername: string;
@@ -86,14 +86,10 @@ export const profileData: ProfileData = {
     secondaryLine: "Full-stack roots in React and Node. Building scalable, observable microservices.",
     location: "Ahmedabad, India",
     email: "aryanpandey.ce@gmail.com",
-    // Phone is strictly displayed ONLY on /resume, not in metadata/JSON-LD/sitemap
-    phone: "+91-9054454394",
     githubUrl: "https://github.com/aryanpandeyce",
     githubUsername: "aryanpandeyce",
-    // TODO: Replace with real LeetCode username when available
-    leetcodeUsername: "aryanpandeyce",
-    leetcodeUrl: "https://leetcode.com/u/aryanpandeyce",
-    // TODO: Replace with real LinkedIn URL when available
+    leetcodeUsername: "aryan_inzy",
+    leetcodeUrl: "https://leetcode.com/u/aryan_inzy/",
     linkedinUrl: "https://linkedin.com/in/aryanpandeyce",
     resumeUrl: "/resume.pdf",
     shortBio:

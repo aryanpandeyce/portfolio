@@ -12,7 +12,6 @@ import {
   Check,
   ArrowLeft,
   Mail,
-  Phone,
   MapPin,
   Briefcase,
   GraduationCap,
@@ -38,7 +37,7 @@ export function ResumeViewer({ hasPdf = false }: ResumeViewerProps) {
     const plainText = `
 ${profileData.personal.name}
 ${profileData.personal.headline}
-Email: ${profileData.personal.email} | Phone: ${profileData.personal.phone} | Location: ${profileData.personal.location}
+Email: ${profileData.personal.email} | Location: ${profileData.personal.location}
 GitHub: ${profileData.personal.githubUrl} | LinkedIn: ${profileData.personal.linkedinUrl}
 
 SUMMARY:
@@ -161,14 +160,9 @@ ${profileData.skillTree
               </div>
             </div>
 
-            {/* Contact line: Phone is STRICTLY displayed here ONLY */}
+            {/* Contact line */}
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 font-mono-code text-xs text-[var(--foreground-muted)] print:text-black pt-2">
               <span className="flex items-center gap-1 font-semibold text-[var(--foreground)] print:text-black">
-                <Phone className="w-3.5 h-3.5 text-[var(--accent)] print:text-black" />
-                {profileData.personal.phone}
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
                 <Mail className="w-3.5 h-3.5 text-[var(--accent)] print:text-black" />
                 {profileData.personal.email}
               </span>

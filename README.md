@@ -1,130 +1,166 @@
 # Aryan Pandey — Backend & Cloud-Native Engineer Portfolio
 
-A production-grade, ultra-fast, SEO-optimized developer portfolio website built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, and **React Three Fiber (3D)**.
+[![Live Production Site](https://img.shields.io/badge/Live%20Site-aryanpandeyce.github.io%2Fportfolio-D97757?style=for-the-badge&logo=githubpages&logoColor=white)](https://aryanpandeyce.github.io/portfolio/)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-aryanpandeyce-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aryanpandeyce)
+[![LeetCode Profile](https://img.shields.io/badge/LeetCode-aryan__inzy-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/aryan_inzy/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aryan%20Pandey-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/aryanpandeyce)
+[![Tests Passing](https://img.shields.io/badge/Playwright-52%20Tests%20Passing-27C93F?style=for-the-badge&logo=playwright&logoColor=white)](https://github.com/aryanpandeyce/portfolio/actions)
 
-Designed with a warm **"Claude-inspired palette with a tasteful retro computing twist"** featuring Fraunces editorial serif typography, terminal window chrome, hard offset shadows, toggleable CRT scanlines, 8-bit sound effects, evidence-based Skill Tree Loadout, an original Retro 2D Canvas Arcade cabinet, and static HTML pre-rendering.
+> **Live Deployment:** [https://aryanpandeyce.github.io/portfolio/](https://aryanpandeyce.github.io/portfolio/)  
+> **Repository Documentation (README):** [https://github.com/aryanpandeyce/portfolio#readme](https://github.com/aryanpandeyce/portfolio#readme)
+
+---
+
+## 🧭 Overview
+
+A production-grade, ultra-fast, SEO-optimized personal portfolio and interactive engineering showcase built for **Aryan Pandey**, a Backend & Cloud-Native Engineer specializing in **Go**, **Java 21**, **Kubernetes**, **Kafka**, and distributed microservices with full-stack roots in **React** and **Node.js**.
+
+Designed with a warm **"Claude-inspired palette with a tasteful retro computing twist"**, featuring Fraunces editorial serif typography, terminal window chrome, hard offset shadows, toggleable CRT scanlines, 8-bit sound effects, an evidence-based Skill Tree Loadout, an original Retro 2D Canvas Arcade cabinet, and 100% crawlable static HTML pre-rendering.
 
 ---
 
 ## 🚀 Key Features & Architectural Highlights
 
-1. **Editorial Hero Section**:
-   - Semantic `<h1>` heading serving as the instant Largest Contentful Paint (LCP) element.
-   - Animated typewriter discipline tagline.
-   - Small `● OPEN TO OPPORTUNITIES` retro badge.
-   - Interactive 3D hero scene with head-tracking and idle-breathing animation. Automatically gates and falls back to a lightweight SVG terminal illustration on low-memory devices (<= 4GB), low-concurrency devices (<= 4 cores), saveData mode, reduced motion, or mobile widths (< 768px).
+### 1. ⚡ Editorial Hero & Hybrid 3D Scene
+- **Instant Largest Contentful Paint (LCP)**: Semantic `<h1>` heading pre-rendered in static HTML with zero layout shift (CLS < 0.05).
+- **Animated Typewriter Discipline Tagline**: Smoothly cycles between *Backend & Cloud-Native Architecture*, *Distributed Microservices*, *High-Throughput Event Streams*, and *Resilient Kubernetes Infrastructure*.
+- **Hardware-Adaptive 3D Rendering**: Interactive Three.js / React Three Fiber scene with head-tracking and idle-breathing animation. Automatically gates and falls back to a lightweight SVG terminal illustration on low-memory devices ($\le 4\text{GB}$), low-concurrency devices ($\le 4$ cores), `saveData` mode, reduced motion, or mobile widths ($< 768\text{px}$).
 
-2. **Narrative & About**:
-   - First-person career narrative: full-stack roots in React and Node transitioning into distributed Go and Java 21 microservices, Kafka/RabbitMQ event pipelines, and Kubernetes orchestration.
-   - Infinite tech stack marquee containing only verified technologies from Aryan's resume, paused when off-screen and under `prefers-reduced-motion`.
+### 2. 📖 Narrative & Experience Timeline
+- **First-Person Journey**: Transitions from building high-throughput SaaS and real-estate CRMs with React and Node into distributed event-driven systems with Go, Java 21 Spring Boot, Apache Kafka, and Kubernetes.
+- **Infinite Technology Marquee**: Highlights verified technologies from Aryan's track record; auto-pauses when scrolled out of view, on hover, or under `prefers-reduced-motion`.
+- **Chronological Experience Timeline**:
+  - **Shyam Group (IntelliWorkz)** — *Full Stack Developer, Real Estate CRM*: 10+ module CRM managing 4,000+ leads, INR 6.3 Cr+ sales, 9-stage pipeline, 6-channel integrations, and local LLM RAG AI assistant (Qwen via Ollama).
+  - **Technomine** — *Software Developer*: 4 business apps (HRMS V1/V2, Travel Booking, Call Log Report Tool) across ASP.NET, React, and SQL Server/MySQL.
+  - **Techno Hacks Edutech** — *Web Development Intern*: Responsive client-facing web applications with clean REST API integrations.
+  - Interactive collapsible cards on mobile viewports with technology chips.
 
-3. **Experience Timeline**:
-   - **Shyam Group (IntelliWorkz)**: 10+ module CRM managing 4,000+ leads, INR 6.3 Cr+ sales, 9-stage pipeline, 6-channel integrations, and local LLM RAG AI assistant (Qwen via Ollama).
-   - **Technomine**: 4 business apps (HRMS V1/V2, Travel Booking, Call Log Report Tool) across ASP.NET, React, and multiple databases.
-   - **Techno Hacks Edutech**: Responsive front-end applications with REST API integrations.
-   - Interactive mobile collapsible cards per role with technology chips.
+### 3. 🧩 Featured Projects Bento Grid
+- **FleetPulse**: Cloud-Native Fleet Management platform written in Go, gRPC, Kubernetes, NATS, and AWS Helm charts.
+- **ApexPay**: Enterprise Payment Platform in Java 21, Spring Boot 3, Apache Kafka, PostgreSQL, MongoDB, and Kubernetes. Includes live demo integration.
+- **LendStrangler**: Monolith to Microservices migration utilizing the Strangler Fig pattern with TypeScript, Node.js, RabbitMQ, and Docker. Includes live demo integration.
+- Architecture badge row per card; detailed "Problem $\rightarrow$ Approach $\rightarrow$ Result" case-study modal summaries.
 
-4. **Featured Projects (Bento Grid)**:
-   - **FleetPulse**: Cloud-Native Fleet Management (Go, gRPC, Kubernetes, NATS, AWS, Helm).
-   - **ApexPay**: Enterprise Payment Platform (Java 21, Spring Boot 3, Kafka, PostgreSQL, MongoDB, Kubernetes). Includes live demo.
-   - **LendStrangler**: Monolith to Microservices via Strangler Fig (TypeScript, Node.js, RabbitMQ, Docker). Includes live demo.
-   - Architecture badge row per card; "Problem -> Approach -> Result" summary on each case-study page.
+### 4. 🌳 Evidence-Based Skill Tree // Loadout
+- Replaces traditional, subjective percentage progress bars with an authentic **retro cartridge-slot UI** organized by domain:
+  - **Languages**: Go, Java 21, TypeScript, JavaScript, SQL, Python
+  - **Backend & Microservices**: Spring Boot 3, Gin, Node.js / Express, gRPC, REST APIs, Kafka, RabbitMQ
+  - **Cloud & DevOps**: Kubernetes, Docker, Helm, AWS (EC2, S3, EKS), GitHub Actions, Terraform
+  - **Databases & Caching**: PostgreSQL, MongoDB, Redis, MySQL
+  - **Frontend & UI**: React, Next.js, Tailwind CSS, HTML5/CSS3
+  - **AI & Data Engineering**: Local LLM RAG (Ollama / Qwen), LangChain, Vector Embeddings
+  - **Core CS**: Distributed Systems, Data Structures & Algorithms, Design Patterns, OOP
+- Strict evidence tiers: `Daily Driver`, `Production`, `Built Projects`.
+- Clickable proof links to actual repositories and project implementations.
 
-5. **Skill Tree // Loadout (Replaces Old Tech Matrix)**:
-   - Retro cartridge-slot UI grouped into window panels: Languages, Backend & Microservices, Cloud & DevOps, Databases, Frontend, AI/Data, Core CS.
-   - Strict evidence-based tier labels (`Daily Driver`, `Production`, `Built Projects`) and crawlable HTML proof links.
-   - Filter tabs (All, Backend, Cloud, Databases, Frontend, AI/Data, Core CS), keyboard accessible.
+### 5. 🏆 Trophy Case & Honors
+- **Dewang Mehta IT Award 2023**: State-level IT excellence honor presented by NASSCOM and GTU.
+- **HackerRank 5-Star JavaScript Challenge**: Top-tier algorithmic problem-solving badge.
+- **365-Day LeetCode Streak**: Continuous algorithmic practice across data structures, graph theory, dynamic programming, and systems algorithms.
+- **Google Developer Student Club (GDSC) Lead**: Mentored 200+ engineering students in modern cloud and web development.
 
-6. **Trophy Case & Honors**:
-   - Dewang Mehta IT Award 2023 (NASSCOM & GTU)
-   - HackerRank 5-Star JavaScript Challenge
-   - 365-Day LeetCode Streak
-   - Google Developer Student Club Lead
+### 6. 📊 Coding Profiles & Live API Analytics
+- **GitHub Integration**: Live repository and commit statistics for [`aryanpandeyce`](https://github.com/aryanpandeyce).
+- **LeetCode Integration**: Algorithmic problem-solving breakdown for [`aryan_inzy`](https://leetcode.com/u/aryan_inzy/) synced automatically via GitHub Actions CI/CD workflows and Alfa LeetCode API.
+- **Zero Chart Library Dependencies**: Lightweight SVG charts and CSS meters with zero external bundle overhead.
 
-7. **Coding Profiles & Analytics**:
-   - GitHub statistics and contribution activity for `aryanpandeyce`.
-   - LeetCode analytics showing verified 365-Day Streak and "last synced" timestamps. Zero chart library dependencies (lightweight SVG/CSS).
+### 7. 🕹️ Retro 2D Canvas Arcade // Insert Coin
+- Lightweight, zero-dependency original 2D Canvas arcade games ($< 15\text{KB}$ total gzipped):
+  1. **BUG BLASTER**: Space-Invaders-style arcade defending against NullPointers, Race Conditions, and Memory Leaks with Coffee and Try/Catch power-ups.
+  2. **PACKET SNAKE**: High-speed network packet snake collecting tech tokens (Go, Kafka, K8s, Java, Redis, Docker) across the memory grid.
+- Dynamic code splitting: arcade bundles load on demand upon clicking "Insert Coin" (or pressing the Konami Code: $\uparrow \uparrow \downarrow \downarrow \leftarrow \rightarrow \leftarrow \rightarrow \text{B} \ \text{A}$).
+- Dedicated linkable standalone page at [`/arcade/`](https://aryanpandeyce.github.io/portfolio/arcade/).
 
-8. **Retro Arcade // Insert Coin**:
-   - Zero-dependency original 2D Canvas games (`< 15KB` gzipped):
-     1. **BUG BLASTER**: Space-Invaders-style shooter defending against NullPointers, Race Conditions, and Memory Leaks with Coffee and Try/Catch power-ups.
-     2. **PACKET SNAKE**: Data packet stream collecting resume tech tokens (Go, Kafka, K8s, Java, Redis, Docker) on a grid.
-   - Lazy-loaded dynamically on "Insert Coin" click (prefetched on hover/focus).
-   - Reserved aspect-ratio container (zero layout shift).
-   - Konami code easter egg (`↑ ↑ ↓ ↓ ← → ← → B A`) to trigger the arcade.
-   - Dedicated standalone page at `/arcade` with full sitemap integration.
-
-9. **Interactive Resume & Print View (`/resume`)**:
-   - Comprehensive web resume with print-friendly CSS.
-   - Phone number `+91-9054454394` is strictly displayed ONLY on this page.
-   - Safe PDF download check: checks for `public/resume.pdf` at build time.
+### 8. 📄 Interactive Web Resume & Print Layout (`/resume/`)
+- Clean, semantic web resume designed for both digital browsing and physical 1-page/2-page print output via `@media print`.
+- Single-click **Copy Plain Text** for applicant tracking systems (ATS).
+- **Privacy First**: Phone numbers are completely excluded from public web pages, DOM elements, and metadata. Direct contact is routed via email (`aryanpandey.ce@gmail.com`) and LinkedIn.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-- **Framework**: Next.js 16 (App Router) + TypeScript
-- **Export Mode**: Static Export (`output: 'export'`, `trailingSlash: true`, `images: { unoptimized: true }`)
-- **Styling**: Tailwind CSS v4 + Custom Retro CSS Variables
-- **3D Graphics**: Three.js + `@react-three/fiber` + `@react-three/drei` (gated and idle-deferred)
-- **Audio**: Synthesized Web Audio API 8-bit sound effects
-- **Testing**: Playwright test suite (375px, 768px, 1280px, 1920px viewports, dark mode, arcade unit tests, CLS observer)
-- **Deployment**: GitHub Pages via GitHub Actions
+| Layer | Technology |
+|---|---|
+| **Framework** | Next.js 16 (App Router) with Static HTML Export (`output: 'export'`) |
+| **Language** | TypeScript (Strict Mode) |
+| **Styling** | Tailwind CSS v4 + Custom Retro CSS Variables |
+| **Components** | Radix UI primitives + Custom Retro Window Chrome |
+| **3D Graphics** | Three.js + React Three Fiber + Drei (Idle-deferred & Gated) |
+| **Audio** | Web Audio API Synthesized 8-bit Sound Effects (Zero MP3 Assets) |
+| **Testing** | Playwright Test Suite (52 tests across 375px, 768px, 1280px, 1920px) |
+| **CI / CD** | GitHub Actions Pages Deployment with Daily Data Sync |
 
 ---
 
 ## 💻 Local Setup & Development
 
-### 1. Installation
+### 1. Prerequisites
+- Node.js 20+ (Node.js 22 recommended)
+- npm 10+
+
+### 2. Clone & Install
 ```bash
+# Clone the repository
 git clone https://github.com/aryanpandeyce/portfolio.git
 cd portfolio
+
+# Install dependencies
 npm install
 ```
 
-### 2. Development Server
+### 3. Development Server
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 3. Build & Test
+### 4. Fetch Live GitHub & LeetCode Data
 ```bash
-# Static production build (emitted to /out)
-npm run build
+# Set your handles (or use built-in defaults: aryanpandeyce and aryan_inzy)
+node scripts/fetch-data.mjs
+```
 
-# Run Playwright responsive and arcade unit tests
+### 5. Run Test Suite
+```bash
+# Execute all 52 Playwright tests across mobile, tablet, and desktop viewports
 npm test
+```
 
-# Run bundle analyzer
+### 6. Production Static Build
+```bash
+# Compile static export into /out
+npm run build
+```
+
+### 7. Bundle Analyzer
+```bash
 npm run analyze
 ```
 
 ---
 
-## 📊 Performance Budgets & Auditing
+## 🚢 GitHub Pages CI/CD Deployment
 
-- **Budget Config**: [`perf-budget.json`](./perf-budget.json) defines max resource size limits (scripts <= 250KB, stylesheets <= 100KB, total <= 1MB).
-- **Lighthouse CI**: [`lighthouserc.json`](./lighthouserc.json) enforces:
-  - Performance >= 95 (warn on < 90)
-  - Accessibility >= 95 (error on < 90)
-  - SEO = 100 (error on < 95)
-  - CLS < 0.1
-
----
-
-## 🚢 GitHub Pages Deployment
-
-### Workflow Configuration:
-1. Ensure your repository Pages setting is configured to **GitHub Actions**:
-   - **Settings** > **Pages** > **Build and deployment** > **Source**: `GitHub Actions`
-2. Add repository Variables under **Settings** > **Secrets and variables** > **Actions** > **Variables**:
-   - `PORTFOLIO_GITHUB_USER`: `aryanpandeyce`
-   - `PORTFOLIO_LEETCODE_USER`: `[LEETCODE_USERNAME]`
-3. Push to `main` branch to trigger `.github/workflows/deploy.yml`.
+The repository includes an automated workflow in `.github/workflows/deploy.yml`:
+1. Runs on every push to the `main` branch and on a daily midnight cron schedule (`0 0 * * *`).
+2. Automatically syncs latest public repositories for `aryanpandeyce` and problem-solving stats for `aryan_inzy`.
+3. Compiles the Next.js static export with `NEXT_PUBLIC_BASE_PATH=/portfolio`.
+4. Deploys the static bundle directly to GitHub Pages with `.nojekyll` protection.
 
 ---
 
-## 🔍 SEO Submission
-1. **Google Search Console**: Submit `https://aryanpandeyce.github.io/sitemap.xml`.
-2. **Bing Webmaster Tools**: Import or submit `https://aryanpandeyce.github.io/sitemap.xml`.
+## 📬 Contact & Links
+
+- **Portfolio:** [https://aryanpandeyce.github.io/portfolio/](https://aryanpandeyce.github.io/portfolio/)
+- **LeetCode:** [https://leetcode.com/u/aryan_inzy/](https://leetcode.com/u/aryan_inzy/)
+- **GitHub:** [https://github.com/aryanpandeyce](https://github.com/aryanpandeyce)
+- **LinkedIn:** [https://linkedin.com/in/aryanpandeyce](https://linkedin.com/in/aryanpandeyce)
+- **Email:** [aryanpandey.ce@gmail.com](mailto:aryanpandey.ce@gmail.com)
+- **Repository Documentation:** [https://github.com/aryanpandeyce/portfolio#readme](https://github.com/aryanpandeyce/portfolio#readme)
+
+---
+
+## 📜 License
+
+Created with precision and retro aesthetics by [Aryan Pandey](https://github.com/aryanpandeyce). Distributed under the [MIT License](LICENSE).

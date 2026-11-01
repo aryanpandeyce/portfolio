@@ -7,7 +7,7 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(ROOT_DIR, "data");
 
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME || "aryanpandeyce";
-const LEETCODE_USERNAME = process.env.LEETCODE_USERNAME || "";
+const LEETCODE_USERNAME = process.env.LEETCODE_USERNAME || "aryan_inzy";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
 
 async function fetchGitHubData() {

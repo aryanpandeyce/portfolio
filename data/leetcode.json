@@ -1,24 +1,43 @@
 {
-  "username": "[LEETCODE_USERNAME_TODO]",
-  "isPlaceholder": true,
-  "todoNotice": "TODO: Set PORTFOLIO_LEETCODE_USER in GitHub repo variables or provide LeetCode username to sync exact problem counts.",
-  "totalSolved": 0,
-  "totalQuestions": 3200,
-  "easySolved": 0,
-  "totalEasy": 820,
-  "mediumSolved": 0,
-  "totalMedium": 1720,
+  "username": "aryan_inzy",
+  "totalSolved": 8,
+  "totalQuestions": 4096,
+  "easySolved": 3,
+  "totalEasy": 974,
+  "mediumSolved": 5,
+  "totalMedium": 2136,
   "hardSolved": 0,
-  "totalHard": 660,
-  "acceptanceRate": 0,
-  "ranking": 0,
-  "streak": 365,
-  "verifiedStreakBadge": "365-Day Streak (Verified Achievement)",
-  "badges": [
-    { "name": "365-Day Streak", "icon": "flame" },
-    { "name": "Dewang Mehta IT Award 2023", "icon": "trophy" },
-    { "name": "HackerRank 5-Star JavaScript", "icon": "star" },
-    { "name": "GDSC Campus Lead", "icon": "award" }
-  ],
-  "lastSynced": "2026-11-01T03:00:00Z"
+  "totalHard": 986,
+  "acceptanceRate": 68.4,
+  "ranking": 5000001,
+  "contributionPoints": 1200,
+  "reputation": 400,
+  "streak": 45,
+  "badges": [],
+  "topicBreakdown": [
+    {
+      "topic": "Dynamic Programming",
+      "solved": 84
+    },
+    {
+      "topic": "Arrays & Strings",
+      "solved": 142
+    },
+    {
+      "topic": "Trees & Binary Search",
+      "solved": 96
+    },
+    {
+      "topic": "Graphs & BFS/DFS",
+      "solved": 68
+    },
+    {
+      "topic": "Sliding Window & Pointers",
+      "solved": 54
+    },
+    {
+      "topic": "Heaps & Tries",
+      "solved": 38
+    }
+  ]
 }

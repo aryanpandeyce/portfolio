@@ -25,6 +25,7 @@ export function RetroStatusBar() {
     { label: "Education & Certifications", href: "/#education", category: "Section" },
     { label: "Retro Arcade // Insert Coin", href: "/arcade", category: "Page" },
     { label: "Interactive Resume", href: "/resume", category: "Page" },
+    { label: "README.md // Repository Documentation", href: "https://github.com/aryanpandeyce/portfolio#readme", category: "Docs" },
     { label: "Contact Form", href: "/#contact", category: "Section" },
   ];
 
@@ -60,7 +61,11 @@ export function RetroStatusBar() {
     retroAudio.playCoin();
     setCmdOpen(false);
     setSearchQuery("");
-    router.push(href);
+    if (href.startsWith("http")) {
+      window.open(href, "_blank", "noopener,noreferrer");
+    } else {
+      router.push(href);
+    }
   };
 
   return (

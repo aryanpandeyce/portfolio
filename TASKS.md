@@ -4,13 +4,14 @@
 
 - [x] **Phase 1: Identity & Profile Personalization**
   - [x] Update `data/profile.ts` with Aryan Pandey's real data (Headline: "Backend & Cloud-Native Engineer | Go, Java, Distributed Systems", secondary line: "Full-stack roots in React and Node. Building scalable, observable microservices.").
-  - [x] Strict phone visibility constraint: `+91-9054454394` displayed strictly ONLY on `/resume` web page (never in meta tags, JSON-LD, sitemap, or humans.txt).
+  - [x] Strict phone privacy constraint: Phone number completely removed from all source code, components, JSON-LD, sitemap, meta tags, and DOM elements. Contact routed through email and LinkedIn.
   - [x] Update 3 real experiences: Shyam Group (IntelliWorkz) CRM, Technomine, Techno Hacks Edutech.
   - [x] Update 3 featured projects in `data/projects.override.json`: FleetPulse (Go/Kubernetes), ApexPay (Java 21/Spring Boot/Kafka), LendStrangler (TypeScript/RabbitMQ) with factual Problem -> Approach -> Result summaries and live demo links for ApexPay and LendStrangler.
   - [x] Remove placeholder project "synth-cache" from data, tests, and documentation.
   - [x] Update education: Gujarat Technological University (BE CS, CGPA 9.03/10.0), IIT Madras (BSc Data Science, GPA 6.80/10.0).
   - [x] Update 4 achievements: Dewang Mehta IT Award 2023, HackerRank 5-Star JavaScript, 365-Day LeetCode Streak, GDSC Lead.
-  - [x] Update GitHub user snapshot for `aryanpandeyce` and LeetCode snapshot with verified 365-day streak and clear TODO notices without fake stats.
+  - [x] Update LeetCode profile to `https://leetcode.com/u/aryan_inzy/` with live API sync and custom retro terminal favicon branding.
+  - [x] Add direct link to `README.md` repository documentation in web app footer and retro quick jump dock.
 
 - [x] **Phase 2: Hero, About & Experience Polish**
   - [x] Personalize Hero section with animated typewriter rotating specialties, Aryan's headline, and `● OPEN TO OPPORTUNITIES` retro badge.

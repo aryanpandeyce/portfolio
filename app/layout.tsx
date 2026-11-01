@@ -82,6 +82,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/icon.svg`, type: "image/svg+xml" },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/favicon.ico`, sizes: "any" },
+    ],
+    apple: [
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/apple-touch-icon.png`, sizes: "180x180" },
+    ],
+  },
 };
 
 export default function RootLayout({

@@ -160,6 +160,16 @@ export function Footer() {
               <li>React Three Fiber (3D)</li>
               <li>
                 <a
+                  href="https://github.com/aryanpandeyce/portfolio#readme"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--accent)] hover:underline font-semibold transition-colors"
+                >
+                  &gt; README.md (Docs)
+                </a>
+              </li>
+              <li>
+                <a
                   href={withBasePath("/sitemap.xml")}
                   target="_blank"
                   className="hover:text-[var(--accent)] transition-colors"
